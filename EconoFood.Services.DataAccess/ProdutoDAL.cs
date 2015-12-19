@@ -48,5 +48,10 @@ namespace EconoFood.Services.DataAccess
 
             return retorno;
         }
+
+        public List<Produto> CompararPreco(int idProduto)
+        {
+            return null;
+        }
     }
 }
