@@ -1,0 +1,6 @@
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\bin\Debug\EconoFood.Tests.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\bin\Debug\EconoFood.Tests.pdb
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.csprojResolveAssemblyReference.cache
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.pdb

@@ -1,0 +1,14 @@
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.exe.config
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.exe
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.pdb
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\MainWindow.g.cs
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\App.g.cs
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools_MarkupCompile.cache
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools_MarkupCompile.lref
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\MainWindow.baml
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.g.resources
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.Properties.Resources.resources
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.csproj.GenerateResource.Cache
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.exe
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.pdb

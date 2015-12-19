@@ -1,0 +1,5 @@
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.pdb
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.csprojResolveAssemblyReference.cache
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.pdb

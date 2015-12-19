@@ -1,0 +1,9 @@
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Services.DataAccess.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Services.DataAccess.pdb
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\obj\Debug\EconoFood.Services.DataAccess.csprojResolveAssemblyReference.cache
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\obj\Debug\EconoFood.Services.DataAccess.dll
+c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\obj\Debug\EconoFood.Services.DataAccess.pdb
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Framework.dll
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Framework.pdb
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Services.DTO.dll
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DataAccess\bin\Debug\EconoFood.Services.DTO.pdb

@@ -1,0 +1,5 @@
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\bin\Debug\EconoFood.Framework.dll
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\bin\Debug\EconoFood.Framework.pdb
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.dll
+C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.pdb

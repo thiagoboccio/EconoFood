@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyHomePage</title>
+</head>
+<body>
+    <div> 
+        Welcome :)
+    </div>
+    @model EconoFood.Web.Models.HomeModel
+    @using (Html.BeginForm("GotoHome", "Home"))
+    {
+        @Html.TextBoxFor(m => m.Name)
+        <input type="submit" value="Home" />        
+    }
+</body>
+</html>
