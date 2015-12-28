@@ -19,6 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EconoFood.Framework", "Econ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EconoFood.Web", "EconoFood.Web\EconoFood.Web.csproj", "{5199F688-5B87-45C0-97E2-8BC1D2951320}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EconoFood", "EconoFood\EconoFood.csproj", "{BDB64D7F-0AFA-490A-B328-4AD7B129E467}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E833B48C-9DAB-4C20-B3B1-B7671F9CC6C0} = {E833B48C-9DAB-4C20-B3B1-B7671F9CC6C0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +62,10 @@ Global
 		{5199F688-5B87-45C0-97E2-8BC1D2951320}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5199F688-5B87-45C0-97E2-8BC1D2951320}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5199F688-5B87-45C0-97E2-8BC1D2951320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB64D7F-0AFA-490A-B328-4AD7B129E467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB64D7F-0AFA-490A-B328-4AD7B129E467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB64D7F-0AFA-490A-B328-4AD7B129E467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB64D7F-0AFA-490A-B328-4AD7B129E467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

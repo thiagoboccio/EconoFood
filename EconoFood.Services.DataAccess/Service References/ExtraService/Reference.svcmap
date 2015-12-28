@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="36555100-9a13-4286-95d0-0e9ab32e6f26" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57255/ServiceExtra.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceExtra.xsd" MetadataType="Schema" ID="20ccd3d5-a28c-40c0-8935-569923b46c6a" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceExtra1.xsd" MetadataType="Schema" ID="10d01d46-07f5-4980-969a-f87317c268a6" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceExtra2.xsd" MetadataType="Schema" ID="014cc8f2-452b-4f7c-9d37-8e60711f4b13" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceExtra.disco" MetadataType="Disco" ID="41a4631c-b7ae-4912-93e3-4a8edc59dbc5" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?disco" />
+    <MetadataFile FileName="ServiceExtra.wsdl" MetadataType="Wsdl" ID="7a317be7-3447-40de-a8b5-409c092a7dd2" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

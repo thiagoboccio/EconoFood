@@ -8,6 +8,7 @@ namespace EconoFood.Framework
 {
     public static class Procedures
     {
-        public static readonly string Produto_SELECT_ALL = "Produto_SELECT_ALL";
+        public static readonly string Produto_SELECT_ALL    = "Produto_SELECT_ALL";
+        public static readonly string Produto_SELECT        = "Produto_SELECT";        
     }
 }

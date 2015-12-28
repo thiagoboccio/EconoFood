@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +44,16 @@
   <ItemGroup>
     <Compile Include="ProdutoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ExtraService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SondaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EconoFood.Framework\EconoFood.Framework.csproj">
@@ -52,6 +64,72 @@
       <Project>{912e3011-e4d0-4c00-a629-3c3ba5279e7b}</Project>
       <Name>EconoFood.Services.DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ExtraService\EconoFood.Services.DataAccess.ExtraService.ObterPrecoProdutoExtraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\ServiceExtra.wsdl" />
+    <None Include="Service References\ExtraService\ServiceExtra.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExtraService\ServiceExtra1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExtraService\ServiceExtra2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SondaService\EconoFood.Services.DataAccess.SondaService.ObterPrecoProdutoSondaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SondaService\ServiceSonda.wsdl" />
+    <None Include="Service References\SondaService\ServiceSonda.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SondaService\ServiceSonda1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SondaService\ServiceSonda2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ExtraService\" />
+    <WCFMetadataStorage Include="Service References\SondaService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SondaService\ServiceSonda.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SondaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SondaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SondaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExtraService\ServiceExtra.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExtraService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExtraService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExtraService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -55,6 +55,17 @@ namespace EconoFood.Framework
         {
             var execucao = Command;
             return execucao.ExecuteNonQuery();            
-        }        
+        }
+
+        public DataTable Select(List<SqlParameter> parametros)
+        {            
+            var execucao = Command;
+            parametros.ForEach(o => execucao.Parameters.Add(o));
+            SqlDataAdapter da = new SqlDataAdapter(execucao);
+            DataTable retorno = new DataTable();
+            da.Fill(retorno);
+
+            return retorno;
+        }
     }
 }

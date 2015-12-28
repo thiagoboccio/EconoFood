@@ -3,3 +3,8 @@ c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Servic
 c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.csprojResolveAssemblyReference.cache
 c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.dll
 c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.pdb
+C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.dll
+C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.pdb
+C:\Projetos\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.dll
+C:\Projetos\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.pdb
+C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.csprojResolveAssemblyReference.cache

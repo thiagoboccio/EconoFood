@@ -20,17 +20,16 @@ namespace EconoFood.Services
             return bll.ListarTodos();             
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<DTO.Produto> PesquisarPorNome(string nomeProduto)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            var bll = new Business.ProdutoBLL();
+            return bll.Pesquisar(nomeProduto);
+        }
+
+        public List<DTO.Produto> PesquisarPorID(int idProduto)
+        {
+            var bll = new Business.ProdutoBLL();
+            return bll.Pesquisar(idProduto);
         }
     }
 }
