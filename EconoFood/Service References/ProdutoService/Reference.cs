@@ -26,6 +26,9 @@ namespace EconoFood.ProdutoService {
         private int IdProdutoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<EconoFood.ProdutoService.ProdutoImagem> ImagensField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -50,6 +53,19 @@ namespace EconoFood.ProdutoService {
                 if ((this.IdProdutoField.Equals(value) != true)) {
                     this.IdProdutoField = value;
                     this.RaisePropertyChanged("IdProduto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.ProdutoImagem> Imagens {
+            get {
+                return this.ImagensField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagensField, value) != true)) {
+                    this.ImagensField = value;
+                    this.RaisePropertyChanged("Imagens");
                 }
             }
         }
@@ -90,6 +106,83 @@ namespace EconoFood.ProdutoService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProdutoImagem", Namespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO")]
+    [System.SerializableAttribute()]
+    public partial class ProdutoImagem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private short IdImagemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProdutoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImagemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short IdImagem {
+            get {
+                return this.IdImagemField;
+            }
+            set {
+                if ((this.IdImagemField.Equals(value) != true)) {
+                    this.IdImagemField = value;
+                    this.RaisePropertyChanged("IdImagem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProduto {
+            get {
+                return this.IdProdutoField;
+            }
+            set {
+                if ((this.IdProdutoField.Equals(value) != true)) {
+                    this.IdProdutoField = value;
+                    this.RaisePropertyChanged("IdProduto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Imagem {
+            get {
+                return this.ImagemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagemField, value) != true)) {
+                    this.ImagemField = value;
+                    this.RaisePropertyChanged("Imagem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProdutoService.IProduto")]
     public interface IProduto {
@@ -111,6 +204,12 @@ namespace EconoFood.ProdutoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/PesquisarPorID", ReplyAction="http://tempuri.org/IProduto/PesquisarPorIDResponse")]
         System.Threading.Tasks.Task<EconoFood.ProdutoService.PesquisarPorIDResponse> PesquisarPorIDAsync(EconoFood.ProdutoService.PesquisarPorIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Gravar", ReplyAction="http://tempuri.org/IProduto/GravarResponse")]
+        EconoFood.ProdutoService.GravarResponse Gravar(EconoFood.ProdutoService.GravarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Gravar", ReplyAction="http://tempuri.org/IProduto/GravarResponse")]
+        System.Threading.Tasks.Task<EconoFood.ProdutoService.GravarResponse> GravarAsync(EconoFood.ProdutoService.GravarRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -202,6 +301,38 @@ namespace EconoFood.ProdutoService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Gravar", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GravarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public EconoFood.ProdutoService.Produto produto;
+        
+        public GravarRequest() {
+        }
+        
+        public GravarRequest(EconoFood.ProdutoService.Produto produto) {
+            this.produto = produto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GravarResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GravarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int GravarResult;
+        
+        public GravarResponse() {
+        }
+        
+        public GravarResponse(int GravarResult) {
+            this.GravarResult = GravarResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IProdutoChannel : EconoFood.ProdutoService.IProduto, System.ServiceModel.IClientChannel {
     }
@@ -251,6 +382,14 @@ namespace EconoFood.ProdutoService {
         
         public System.Threading.Tasks.Task<EconoFood.ProdutoService.PesquisarPorIDResponse> PesquisarPorIDAsync(EconoFood.ProdutoService.PesquisarPorIDRequest request) {
             return base.Channel.PesquisarPorIDAsync(request);
+        }
+        
+        public EconoFood.ProdutoService.GravarResponse Gravar(EconoFood.ProdutoService.GravarRequest request) {
+            return base.Channel.Gravar(request);
+        }
+        
+        public System.Threading.Tasks.Task<EconoFood.ProdutoService.GravarResponse> GravarAsync(EconoFood.ProdutoService.GravarRequest request) {
+            return base.Channel.GravarAsync(request);
         }
     }
 }

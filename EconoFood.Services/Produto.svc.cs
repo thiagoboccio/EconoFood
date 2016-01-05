@@ -31,5 +31,11 @@ namespace EconoFood.Services
             var bll = new Business.ProdutoBLL();
             return bll.Pesquisar(idProduto);
         }
+
+        public int Gravar(DTO.Produto produto)
+        {
+            var bll = new Business.ProdutoBLL();
+            return bll.Gravar(produto);            
+        }
     }
 }

@@ -8,6 +8,7 @@ using EconoFood.Services.DTO;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
+using System.Transactions;
 
 namespace EconoFood.Services.DataAccess
 {
@@ -23,9 +24,52 @@ namespace EconoFood.Services.DataAccess
             throw new NotImplementedException();
         }
 
-        public int Inserir()
+        public int Inserir(DTO.Produto produto)
         {
-            throw new NotImplementedException();
+            TransactionOptions options = new TransactionOptions
+            {
+                IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted,
+                Timeout = TimeSpan.FromSeconds(60)
+            };
+
+            using (TransactionScope transacao = new TransactionScope(TransactionScopeOption.Required, options))
+            {
+                try
+                {
+                    Conector conector = new Conector(Procedures.Produto_INSERT);
+                    List<SqlParameter> parametros = new List<SqlParameter>();
+                    parametros.Add(new SqlParameter { ParameterName = "@Status", Value = produto.Status });
+                    parametros.Add(new SqlParameter { ParameterName = "@Nome", Value = produto.Nome });
+                    parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Direction = ParameterDirection.Output });
+
+                    conector.ExecuteNonQuery();
+
+                    var IdProduto = parametros.Find(o => o.ParameterName == "@IdProduto");
+
+                    if (IdProduto.Value != null && int.Parse(IdProduto.Value.ToString()) > 0)
+                    {
+                        conector = new Conector(Procedures.ProdutoImagem_INSERT);
+                        foreach (var imagem in produto.Imagens)
+                        {
+                            parametros = new List<SqlParameter>();
+                            parametros.Add(new SqlParameter { ParameterName = "@Imagem", Value = imagem.Imagem, SqlDbType = SqlDbType.Image });
+                            parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto });
+
+                            conector.ExecuteNonQuery();
+                        }
+
+                        transacao.Complete();
+                        transacao.Dispose();
+                        return int.Parse(IdProduto.Value.ToString());
+                    }
+                }
+                catch (Exception)
+                {
+                    Transaction.Current.Rollback();
+                    throw;
+                }
+            }
+            return 0;
         }
 
         public List<Produto> Listar()
@@ -34,7 +78,7 @@ namespace EconoFood.Services.DataAccess
         }
 
         public List<Produto> ListarTodos()
-        {            
+        {
             Conector conector = new Conector(Procedures.Produto_SELECT_ALL);
             var resultado = conector.ExecuteReader();
 
@@ -58,18 +102,18 @@ namespace EconoFood.Services.DataAccess
             parametros.Add(new SqlParameter { ParameterName = "@Nome", Value = nomeProduto });
             parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = idProduto });
 
-            var resultado   = conector.Select(parametros);
-            var retorno     = new List<Produto>();
+            var resultado = conector.Select(parametros);
+            var retorno = new List<Produto>();
 
             foreach (DataRow linha in resultado.Rows)
             {
                 var produto = new Produto();
-                produto.IdProduto   = Convert.ToInt32(linha["IdProduto"].ToString());
-                produto.Nome        = linha["Nome"].ToString();
-                produto.Status      = int.Parse(linha["Status"].ToString());
+                produto.IdProduto = Convert.ToInt32(linha["IdProduto"].ToString());
+                produto.Nome = linha["Nome"].ToString();
+                produto.Status = int.Parse(linha["Status"].ToString());
                 retorno.Add(produto);
             }
-            
+
             return retorno;
         }
 
@@ -84,7 +128,7 @@ namespace EconoFood.Services.DataAccess
 
             var retorno = new List<Produto>();
             //retorno.Add(resultadoExtra.)
-            
+
 
             return retorno;
         }

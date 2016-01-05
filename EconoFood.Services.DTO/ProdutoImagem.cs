@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EconoFood.Services.DTO
 {
-    class ProdutoImagem
+    public class ProdutoImagem
     {
+        public short IdImagem { get; set; }
+        public int IdProduto { get; set; }
+        public byte[] Imagem { get; set; }
     }
 }

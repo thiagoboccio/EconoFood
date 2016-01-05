@@ -21,5 +21,8 @@ namespace EconoFood.Services
 
         [OperationContract]
         List<DTO.Produto> PesquisarPorID(int idProduto);
+
+        [OperationContract]
+        int Gravar(DTO.Produto produto);
     }    
 }

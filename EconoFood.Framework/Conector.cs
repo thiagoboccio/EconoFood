@@ -14,7 +14,7 @@ namespace EconoFood.Framework
         {
             _commandText = procedure;
         }
-
+                
         private string _commandText;
         private SqlConnection _Connection;
         private SqlConnection Connection

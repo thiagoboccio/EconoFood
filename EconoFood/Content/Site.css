@@ -10,6 +10,19 @@
     background-color:#F00;
 }
 
+.hidden {
+    display:none;
+}
+
+.button {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 5px;
+    background: #777;
+    color: #fff;
+    width:75px;
+}
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;

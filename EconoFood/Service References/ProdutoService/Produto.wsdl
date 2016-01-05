@@ -25,6 +25,12 @@
   <wsdl:message name="IProduto_PesquisarPorID_OutputMessage">
     <wsdl:part name="parameters" element="tns:PesquisarPorIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IProduto_Gravar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Gravar" />
+  </wsdl:message>
+  <wsdl:message name="IProduto_Gravar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GravarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProduto">
     <wsdl:operation name="Listar">
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/Listar" message="tns:IProduto_Listar_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="PesquisarPorID">
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/PesquisarPorID" message="tns:IProduto_PesquisarPorID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProduto/PesquisarPorIDResponse" message="tns:IProduto_PesquisarPorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Gravar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduto/Gravar" message="tns:IProduto_Gravar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduto/GravarResponse" message="tns:IProduto_Gravar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProduto" type="tns:IProduto">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="PesquisarPorID">
       <soap:operation soapAction="http://tempuri.org/IProduto/PesquisarPorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gravar">
+      <soap:operation soapAction="http://tempuri.org/IProduto/Gravar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
