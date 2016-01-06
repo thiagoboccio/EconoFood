@@ -14,6 +14,22 @@
     display:none;
 }
 
+
+.lblRegular
+{
+    width:250px;float:right;
+}
+
+.txtRegular
+{
+    width:150px;
+}
+
+.ddlRegular
+{
+    width:350px;
+}
+
 .button {
     border: 1px solid #333;
     padding: 10px;
