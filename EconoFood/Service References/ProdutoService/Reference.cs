@@ -210,6 +210,12 @@ namespace EconoFood.ProdutoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Gravar", ReplyAction="http://tempuri.org/IProduto/GravarResponse")]
         System.Threading.Tasks.Task<EconoFood.ProdutoService.GravarResponse> GravarAsync(EconoFood.ProdutoService.GravarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/ListarImagens", ReplyAction="http://tempuri.org/IProduto/ListarImagensResponse")]
+        EconoFood.ProdutoService.ListarImagensResponse ListarImagens(EconoFood.ProdutoService.ListarImagensRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/ListarImagens", ReplyAction="http://tempuri.org/IProduto/ListarImagensResponse")]
+        System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarImagensResponse> ListarImagensAsync(EconoFood.ProdutoService.ListarImagensRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -291,12 +297,12 @@ namespace EconoFood.ProdutoService {
     public partial class PesquisarPorIDResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<EconoFood.ProdutoService.Produto> PesquisarPorIDResult;
+        public EconoFood.ProdutoService.Produto PesquisarPorIDResult;
         
         public PesquisarPorIDResponse() {
         }
         
-        public PesquisarPorIDResponse(System.Collections.Generic.List<EconoFood.ProdutoService.Produto> PesquisarPorIDResult) {
+        public PesquisarPorIDResponse(EconoFood.ProdutoService.Produto PesquisarPorIDResult) {
             this.PesquisarPorIDResult = PesquisarPorIDResult;
         }
     }
@@ -330,6 +336,38 @@ namespace EconoFood.ProdutoService {
         
         public GravarResponse(int GravarResult) {
             this.GravarResult = GravarResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarImagens", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarImagensRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int idProduto;
+        
+        public ListarImagensRequest() {
+        }
+        
+        public ListarImagensRequest(int idProduto) {
+            this.idProduto = idProduto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarImagensResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarImagensResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.ProdutoImagem> ListarImagensResult;
+        
+        public ListarImagensResponse() {
+        }
+        
+        public ListarImagensResponse(System.Collections.Generic.List<EconoFood.ProdutoService.ProdutoImagem> ListarImagensResult) {
+            this.ListarImagensResult = ListarImagensResult;
         }
     }
     
@@ -390,6 +428,14 @@ namespace EconoFood.ProdutoService {
         
         public System.Threading.Tasks.Task<EconoFood.ProdutoService.GravarResponse> GravarAsync(EconoFood.ProdutoService.GravarRequest request) {
             return base.Channel.GravarAsync(request);
+        }
+        
+        public EconoFood.ProdutoService.ListarImagensResponse ListarImagens(EconoFood.ProdutoService.ListarImagensRequest request) {
+            return base.Channel.ListarImagens(request);
+        }
+        
+        public System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarImagensResponse> ListarImagensAsync(EconoFood.ProdutoService.ListarImagensRequest request) {
+            return base.Channel.ListarImagensAsync(request);
         }
     }
 }

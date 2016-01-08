@@ -27,5 +27,9 @@ namespace EconoFood.Framework
         /// GRAVA AS IMAGENS DE UM PRODUTO EXISTENTE
         /// </summary>
         public static readonly string ProdutoImagem_INSERT  = "ProdutoImagem_INSERT";
+        /// <summary>
+        /// RETORNA AS IMAGENS DE UM PRODUTO
+        /// </summary>
+        public static readonly string ProdutoImagem_SELECT  = "ProdutoImagem_SELECT";
     }
 }

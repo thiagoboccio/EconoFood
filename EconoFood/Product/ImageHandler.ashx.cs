@@ -22,7 +22,8 @@ namespace EconoFood.Product
                 EconoFood.ProdutoService.ProdutoImagem Imagem = (EconoFood.ProdutoService.ProdutoImagem)context.Session[nomeSession];
 
                 context.Response.ContentType = "image/JPEG";
-                context.Response.BinaryWrite(Imagem.Imagem);
+                if(Imagem.Imagem != null)
+                    context.Response.BinaryWrite(Imagem.Imagem);                
             }
         }
 

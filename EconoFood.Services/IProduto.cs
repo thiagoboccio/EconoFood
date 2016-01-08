@@ -20,9 +20,12 @@ namespace EconoFood.Services
         List<DTO.Produto> PesquisarPorNome(string nomeProduto);
 
         [OperationContract]
-        List<DTO.Produto> PesquisarPorID(int idProduto);
+        DTO.Produto PesquisarPorID(int idProduto);
 
         [OperationContract]
         int Gravar(DTO.Produto produto);
+
+        [OperationContract]
+        List<DTO.ProdutoImagem> ListarImagens(int idProduto);
     }    
 }

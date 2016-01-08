@@ -26,7 +26,7 @@ namespace EconoFood.Services
             return bll.Pesquisar(nomeProduto);
         }
 
-        public List<DTO.Produto> PesquisarPorID(int idProduto)
+        public DTO.Produto PesquisarPorID(int idProduto)
         {
             var bll = new Business.ProdutoBLL();
             return bll.Pesquisar(idProduto);
@@ -36,6 +36,12 @@ namespace EconoFood.Services
         {
             var bll = new Business.ProdutoBLL();
             return bll.Gravar(produto);            
+        }
+
+        public List<ProdutoImagem> ListarImagens(int idProduto)
+        {
+            var bll = new Business.ProdutoImagemBLL();
+            return bll.ListarImagens(idProduto);
         }
     }
 }

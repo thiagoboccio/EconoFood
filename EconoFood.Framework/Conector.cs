@@ -51,10 +51,17 @@ namespace EconoFood.Framework
             return execucao.ExecuteReader();            
         }
 
+        public int ExecuteNonQuery(List<SqlParameter> parametros)
+        {            
+            var execucao = Command;
+            execucao.Parameters.AddRange(parametros.ToArray());
+            return execucao.ExecuteNonQuery();
+        }
+
         public int ExecuteNonQuery()
         {
             var execucao = Command;
-            return execucao.ExecuteNonQuery();            
+            return execucao.ExecuteNonQuery();
         }
 
         public DataTable Select(List<SqlParameter> parametros)

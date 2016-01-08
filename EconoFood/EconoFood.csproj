@@ -170,6 +170,9 @@
     <Content Include="Service References\ProdutoService\EconoFood.ProdutoService.GravarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ProdutoService\EconoFood.ProdutoService.ListarImagensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ProdutoService\Produto.disco" />
     <None Include="Service References\ProdutoService\configuration91.svcinfo" />
     <None Include="Service References\ProdutoService\configuration.svcinfo" />

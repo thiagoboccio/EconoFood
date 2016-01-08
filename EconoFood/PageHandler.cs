@@ -10,6 +10,8 @@ namespace EconoFood
 {
     public class PageHandler : Page
     {
+        public int intParser;
+
         public List<String> CamposObrigatorios
         {
             get
@@ -25,7 +27,7 @@ namespace EconoFood
             }
         }
 
-        public void DestacarCampo(WebControl controle)
+        public void NotificarCampo(WebControl controle)
         {
             List<string> Campos = CamposObrigatorios;
             controle.Style.Add("border-color", "red");
@@ -33,12 +35,31 @@ namespace EconoFood
             CamposObrigatorios = Campos;
         }
 
-        public void DestacarCampo(HtmlTable controle)
+        public void NotificarCampo(HtmlTable controle)
         {
             List<string> Campos = CamposObrigatorios;
             controle.Style.Add("border-color", "red");
             Campos.Add(controle.ID);
             CamposObrigatorios = Campos;
+        }
+
+        public void RemoverNotificacaoCampo(WebControl controle)
+        {
+            List<string> Campos = CamposObrigatorios;
+            Campos.Remove(controle.ToolTip);
+            CamposObrigatorios = Campos;
+        }
+
+        public void RemoverNotificacaoCampo(HtmlTable controle)
+        {
+            List<string> Campos = CamposObrigatorios;
+            Campos.Remove(controle.ID);
+            CamposObrigatorios = Campos;
+        }
+
+        public void Popup(string msg)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", string.Format("javascript:alert('{0}');", msg), true);
         }
     }
 }

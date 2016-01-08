@@ -22,16 +22,16 @@ namespace EconoFood.Services.Business
             return DAL.Pesquisar(nomeProduto, null);
         }
 
-        public List<Produto> Pesquisar(int idProduto)
+        public Produto Pesquisar(int idProduto)
         {
             var DAL = new ProdutoDAL();
-            return DAL.Pesquisar(string.Empty, idProduto);
+            return DAL.Pesquisar(string.Empty, idProduto).FirstOrDefault();
         }
 
         public int Gravar(Produto produto)
         {
             var DAL = new ProdutoDAL();
             return DAL.Inserir(produto);
-        }
+        }        
     }
 }

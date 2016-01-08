@@ -38,11 +38,11 @@ namespace EconoFood.Services.DataAccess
                 {
                     Conector conector = new Conector(Procedures.Produto_INSERT);
                     List<SqlParameter> parametros = new List<SqlParameter>();
-                    parametros.Add(new SqlParameter { ParameterName = "@Status", Value = produto.Status });
-                    parametros.Add(new SqlParameter { ParameterName = "@Nome", Value = produto.Nome });
-                    parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Direction = ParameterDirection.Output });
+                    parametros.Add(new SqlParameter { ParameterName = "@Status", SqlDbType = SqlDbType.SmallInt, Value = produto.Status });
+                    parametros.Add(new SqlParameter { ParameterName = "@Nome", SqlDbType = SqlDbType.VarChar, Value = produto.Nome });
+                    parametros.Add(new SqlParameter { ParameterName = "@IdProduto", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output });
 
-                    conector.ExecuteNonQuery();
+                    conector.ExecuteNonQuery(parametros);
 
                     var IdProduto = parametros.Find(o => o.ParameterName == "@IdProduto");
 
@@ -53,9 +53,9 @@ namespace EconoFood.Services.DataAccess
                         {
                             parametros = new List<SqlParameter>();
                             parametros.Add(new SqlParameter { ParameterName = "@Imagem", Value = imagem.Imagem, SqlDbType = SqlDbType.Image });
-                            parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto });
+                            parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto.Value, SqlDbType = SqlDbType.Int });
 
-                            conector.ExecuteNonQuery();
+                            conector.ExecuteNonQuery(parametros);
                         }
 
                         transacao.Complete();
@@ -63,7 +63,7 @@ namespace EconoFood.Services.DataAccess
                         return int.Parse(IdProduto.Value.ToString());
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     Transaction.Current.Rollback();
                     throw;
