@@ -36,11 +36,23 @@ namespace EconoFood.Services.DataAccess
             {
                 try
                 {
-                    Conector conector = new Conector(Procedures.Produto_INSERT);
+                    Conector conector;
                     List<SqlParameter> parametros = new List<SqlParameter>();
+
+                    if (produto.IdProduto > 0)
+                    {
+                        conector = new Conector(Procedures.Produto_UPDATE);
+                        parametros.Add(new SqlParameter { ParameterName = "@IdProduto", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Input, Value = produto.IdProduto });
+                    }
+                    else
+                    {
+                        conector = new Conector(Procedures.Produto_INSERT);
+                        parametros.Add(new SqlParameter { ParameterName = "@IdProduto", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output });
+                    }
+                    
                     parametros.Add(new SqlParameter { ParameterName = "@Status", SqlDbType = SqlDbType.SmallInt, Value = produto.Status });
                     parametros.Add(new SqlParameter { ParameterName = "@Nome", SqlDbType = SqlDbType.VarChar, Value = produto.Nome });
-                    parametros.Add(new SqlParameter { ParameterName = "@IdProduto", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output });
+                    
 
                     conector.ExecuteNonQuery(parametros);
 

@@ -23,7 +23,7 @@ namespace EconoFood.Product
 
                 context.Response.ContentType = "image/JPEG";
                 if(Imagem.Imagem != null)
-                    context.Response.BinaryWrite(Imagem.Imagem);                
+                    context.Response.BinaryWrite(Imagem.Imagem);
             }
         }
 
