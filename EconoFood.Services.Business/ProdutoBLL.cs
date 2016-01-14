@@ -10,10 +10,10 @@ namespace EconoFood.Services.Business
 {
     public class ProdutoBLL
     {
-        public List<Produto> ListarTodos()
+        public List<Produto> Listar()
         {
             var DAL = new ProdutoDAL();
-            return DAL.ListarTodos();
+            return DAL.Listar();
         }
 
         public List<Produto> Pesquisar(string nomeProduto)

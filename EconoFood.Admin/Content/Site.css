@@ -1,4 +1,45 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿sobreposicao{
+    position: absolute;
+    z-index: 9999;
+    width:500px;
+    height:200px;
+    top:50%;
+    margin-top:-100px;
+    left:50%;
+    margin-left:-250px;
+    background-color:#F00;
+}
+
+.hidden {
+    display:none;
+}
+
+
+.lblRegular
+{
+    width:250px;float:right;
+}
+
+.txtRegular
+{
+    width:150px;
+}
+
+.ddlRegular
+{
+    width:350px;
+}
+
+.button {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 5px;
+    background: #777;
+    color: #fff;
+    width:75px;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
     padding-bottom: 20px;

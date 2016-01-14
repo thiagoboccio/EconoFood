@@ -25,6 +25,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EconoFood", "EconoFood\Econ
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EconoFood.Admin", "EconoFood.Admin\EconoFood.Admin.csproj", "{530BE9A0-EB25-4705-BB92-06864F98CDC8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E833B48C-9DAB-4C20-B3B1-B7671F9CC6C0} = {E833B48C-9DAB-4C20-B3B1-B7671F9CC6C0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

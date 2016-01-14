@@ -40,5 +40,22 @@ namespace EconoFood.Framework
         /// </summary>
         public static readonly string ProdutoImagem_SELECT = "ProdutoImagem_SELECT";
         #endregion
+
+        #region PEDIDO
+        /// <summary>
+        /// BUSCA TODOS OS PEDIDOS SEM FILTRO
+        /// </summary>
+        public static readonly string Pedido_SELECT_ALL = "Pedido_SELECT_ALL";
+
+        /// <summary>
+        /// BUSCA PRODUTO POR:
+        /// <paramref name="ID"/>
+        /// /
+        /// <paramref name="DATA"/>
+        /// /
+        /// <paramref name="STATUS ENTREGA"/>
+        /// </summary>
+        public static readonly string Pedido_SELECT = "Pedido_SELECT";
+        #endregion
     }
 }

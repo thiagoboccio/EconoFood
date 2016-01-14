@@ -9,7 +9,6 @@ namespace EconoFood.Framework
     public interface IBase<T>
     {
         List<T> Listar();
-        List<T> ListarTodos();
         bool Atualizar();
         int Inserir(T entidade);
         void Excluir();        

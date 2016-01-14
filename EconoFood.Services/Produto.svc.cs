@@ -17,7 +17,7 @@ namespace EconoFood.Services
         public List<DTO.Produto> Listar()
         {
             var bll = new Business.ProdutoBLL();
-            return bll.ListarTodos();             
+            return bll.Listar();             
         }
 
         public List<DTO.Produto> PesquisarPorNome(string nomeProduto)

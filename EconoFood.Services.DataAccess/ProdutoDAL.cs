@@ -86,11 +86,6 @@ namespace EconoFood.Services.DataAccess
 
         public List<Produto> Listar()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Produto> ListarTodos()
-        {
             Conector conector = new Conector(Procedures.Produto_SELECT_ALL);
             var resultado = conector.ExecuteReader();
 
