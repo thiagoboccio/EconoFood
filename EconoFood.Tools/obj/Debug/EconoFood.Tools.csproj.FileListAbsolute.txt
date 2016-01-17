@@ -15,7 +15,6 @@ C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tools\
 C:\Projetos\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.exe.config
 C:\Projetos\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.exe
 C:\Projetos\EconoFood\EconoFood.Tools\bin\Debug\EconoFood.Tools.pdb
-C:\Projetos\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools.csprojResolveAssemblyReference.cache
 C:\Projetos\EconoFood\EconoFood.Tools\obj\Debug\MainWindow.g.cs
 C:\Projetos\EconoFood\EconoFood.Tools\obj\Debug\App.g.cs
 C:\Projetos\EconoFood\EconoFood.Tools\obj\Debug\EconoFood.Tools_MarkupCompile.cache

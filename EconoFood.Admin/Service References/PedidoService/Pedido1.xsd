@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50229/Pedido.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO.Enum" />
+  <xs:complexType name="ArrayOfPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pedido" nillable="true" type="tns:Pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPedido" nillable="true" type="tns:ArrayOfPedido" />
+  <xs:complexType name="Pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataPedido" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRecebimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentoReceptor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEntregador" type="xs:short" />
+      <xs:element minOccurs="0" name="IdPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="NomeCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeEntregador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receptor" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO.Enum" minOccurs="0" name="StatusPagamento" type="q1:ePedido.StatusPagamento" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO.Enum" minOccurs="0" name="StatusPedido" type="q2:ePedido.StatusPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pedido" nillable="true" type="tns:Pedido" />
+</xs:schema>

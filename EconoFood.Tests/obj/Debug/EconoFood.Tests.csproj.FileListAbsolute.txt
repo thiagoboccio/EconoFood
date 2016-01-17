@@ -7,6 +7,5 @@ c:\users\thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Tests\
 C:\Projetos\EconoFood\EconoFood.Tests\bin\Debug\EconoFood.Tests.dll
 C:\Projetos\EconoFood\EconoFood.Tests\bin\Debug\EconoFood.Tests.pdb
 C:\Projetos\EconoFood\EconoFood.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Projetos\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.csprojResolveAssemblyReference.cache
 C:\Projetos\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.dll
 C:\Projetos\EconoFood\EconoFood.Tests\obj\Debug\EconoFood.Tests.pdb

@@ -28,5 +28,12 @@ namespace EconoFood.Services.Business
             //return DAL.Pesquisar();
             return null;
         }
+
+        public List<Pedido> Listar()
+        {
+            var DAL = new PedidoDAL();
+
+            return DAL.Listar();
+        }
     }
 }

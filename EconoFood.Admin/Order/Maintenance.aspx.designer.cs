@@ -22,6 +22,15 @@ namespace EconoFood.Admin.Order {
         protected global::System.Web.UI.WebControls.TextBox txtPedido;
         
         /// <summary>
+        /// ddlSituacaoPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSituacaoPagamento;
+        
+        /// <summary>
         /// txtDataInicio control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace EconoFood.Admin.Order {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDataInicio;
+        
+        /// <summary>
+        /// ddlSituacaoEnvio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSituacaoEnvio;
         
         /// <summary>
         /// txtDataFim control.
@@ -40,6 +58,15 @@ namespace EconoFood.Admin.Order {
         protected global::System.Web.UI.WebControls.TextBox txtDataFim;
         
         /// <summary>
+        /// ddlEntregador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEntregador;
+        
+        /// <summary>
         /// btnPesquisar control.
         /// </summary>
         /// <remarks>
@@ -47,5 +74,23 @@ namespace EconoFood.Admin.Order {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPesquisar;
+        
+        /// <summary>
+        /// btnDespachar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDespachar;
+        
+        /// <summary>
+        /// gvPedidos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPedidos;
     }
 }

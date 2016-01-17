@@ -5,6 +5,5 @@ C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framew
 C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.pdb
 C:\Projetos\EconoFood\EconoFood.Framework\bin\Debug\EconoFood.Framework.dll
 C:\Projetos\EconoFood\EconoFood.Framework\bin\Debug\EconoFood.Framework.pdb
-C:\Projetos\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.csprojResolveAssemblyReference.cache
 C:\Projetos\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.dll
 C:\Projetos\EconoFood\EconoFood.Framework\obj\Debug\EconoFood.Framework.pdb
