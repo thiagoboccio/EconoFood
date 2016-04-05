@@ -48,7 +48,7 @@ namespace EconoFood.Services.DataAccess
             parametros.Add(new SqlParameter { ParameterName = "@EmailUsuario", SqlDbType = SqlDbType.VarChar, Value = usuario.Email });
             parametros.Add(new SqlParameter { ParameterName = "@Perfil", SqlDbType = SqlDbType.SmallInt, Value = usuario.Perfil });
             parametros.Add(new SqlParameter { ParameterName = "@Status", SqlDbType = SqlDbType.Bit, Value = usuario.Status });
-            parametros.Add(new SqlParameter { ParameterName = "@Senha", SqlDbType = SqlDbType.SmallInt, Value = PasswordHandler.Encrypt(usuario.Senha, "econofood") });
+            parametros.Add(new SqlParameter { ParameterName = "@Senha", SqlDbType = SqlDbType.NVarChar, Value = PasswordHandler.Encrypt(usuario.Senha, "econofood") });
 
             return conector.ExecuteNonQuery(parametros);            
         }

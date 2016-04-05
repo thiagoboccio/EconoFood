@@ -34,8 +34,8 @@ namespace EconoFood.Admin.User
         private void CarregarComboStatus()
         {
             ddlStatus.Items.Add(new ListItem { Text = "SELECIONE", Selected = true, Value = "-1" });
-            ddlStatus.Items.Add(new ListItem { Text = "INATIVO", Value = "false" });
-            ddlStatus.Items.Add(new ListItem { Text = "ATIVO", Value = "true" });            
+            ddlStatus.Items.Add(new ListItem { Text = "Inativo", Value = "0" });
+            ddlStatus.Items.Add(new ListItem { Text = "Ativo", Value = "1" });            
         }
 
         private void CarregarComboPerfil()
@@ -77,7 +77,7 @@ namespace EconoFood.Admin.User
                 Nome = txtNome.Text.Trim().ToUpper(),
                 Perfil = Convert.ToInt16(ddlPerfil.SelectedValue),
                 Senha = txtSenha.Text.Trim(),
-                Status = bool.Parse(ddlStatus.SelectedValue)
+                Status = ddlStatus.SelectedValue == "1" ? true : false
             });
         }
 
