@@ -19,7 +19,7 @@ namespace EconoFood.Services.DataAccess
             throw new NotImplementedException();
         }
 
-        public void Excluir()
+        public void Excluir(DTO.Produto produto)
         {
             throw new NotImplementedException();
         }

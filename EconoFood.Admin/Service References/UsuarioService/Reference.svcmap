@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="02d1e91b-d20d-4056-a453-215dfc7755e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50229/Usuario.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Usuario.xsd" MetadataType="Schema" ID="6ce72c45-c0d8-4ee0-b4f3-bd2f20d33887" SourceId="1" SourceUrl="http://localhost:50229/Usuario.svc?xsd=xsd1" />
+    <MetadataFile FileName="Usuario1.xsd" MetadataType="Schema" ID="f5d8b0a1-05e9-4db1-ac5b-d82c49952a73" SourceId="1" SourceUrl="http://localhost:50229/Usuario.svc?xsd=xsd2" />
+    <MetadataFile FileName="Usuario2.xsd" MetadataType="Schema" ID="047e4a95-039d-4097-aeef-ee7d739a9230" SourceId="1" SourceUrl="http://localhost:50229/Usuario.svc?xsd=xsd0" />
+    <MetadataFile FileName="Usuario.wsdl" MetadataType="Wsdl" ID="d5e6495e-2c10-43e3-b117-a41567d21e99" SourceId="1" SourceUrl="http://localhost:50229/Usuario.svc?wsdl" />
+    <MetadataFile FileName="Usuario.disco" MetadataType="Disco" ID="7cb35c6d-803e-432f-9c72-541e5a8a39df" SourceId="1" SourceUrl="http://localhost:50229/Usuario.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

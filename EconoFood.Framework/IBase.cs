@@ -11,6 +11,6 @@ namespace EconoFood.Framework
         List<T> Listar();
         bool Atualizar();
         int Inserir(T entidade);
-        void Excluir();        
+        void Excluir(T entidade);        
     }
 }

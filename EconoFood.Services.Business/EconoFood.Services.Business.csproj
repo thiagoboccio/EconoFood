@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DominioBLL.cs" />
     <Compile Include="PedidoBLL.cs" />
     <Compile Include="ProdutoBLL.cs" />
     <Compile Include="ProdutoImagemBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EconoFood.Services.DataAccess\EconoFood.Services.DataAccess.csproj">

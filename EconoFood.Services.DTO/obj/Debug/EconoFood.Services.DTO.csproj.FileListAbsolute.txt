@@ -7,3 +7,4 @@ C:\Projetos\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.dl
 C:\Projetos\EconoFood\EconoFood.Services.DTO\bin\Debug\EconoFood.Services.DTO.pdb
 C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.dll
 C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.pdb
+C:\Projetos\EconoFood\EconoFood.Services.DTO\obj\Debug\EconoFood.Services.DTO.csprojResolveAssemblyReference.cache

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDominio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dominio" nillable="true" type="tns:Dominio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDominio" nillable="true" type="tns:ArrayOfDominio" />
+  <xs:complexType name="Dominio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="Tipo" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dominio" nillable="true" type="tns:Dominio" />
+</xs:schema>

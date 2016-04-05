@@ -30,7 +30,7 @@ namespace EconoFood
         public void NotificarCampo(WebControl controle)
         {
             List<string> Campos = CamposObrigatorios;
-            controle.Style.Add("border-color", "red");
+            controle.Style.Add("border-color", "#F5A9A9");
             Campos.Add(controle.ToolTip);
             CamposObrigatorios = Campos;
         }
@@ -38,7 +38,7 @@ namespace EconoFood
         public void NotificarCampo(HtmlTable controle)
         {
             List<string> Campos = CamposObrigatorios;
-            controle.Style.Add("border-color", "red");
+            controle.Style.Add("border-color", "#F5A9A9");
             Campos.Add(controle.ID);
             CamposObrigatorios = Campos;
         }

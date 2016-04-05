@@ -18,7 +18,21 @@ namespace EconoFood.Services.DTO
         public string NomeEntregador { get; set; }
         public string Receptor { get; set; }
         public string DocumentoReceptor { get; set; }
-        public DateTime DataRecebimento { get; set; }
+        private DateTime? _DataRecebimento;
+        public DateTime? DataRecebimento
+        {
+            get
+            {
+                if (_DataRecebimento != null && _DataRecebimento != DateTime.MinValue)
+                    return _DataRecebimento;
+
+                return null;
+            }
+            set
+            {
+                _DataRecebimento = value;
+            }
+        }
         public DateTime DataPedido { get; set; }
     }
 }

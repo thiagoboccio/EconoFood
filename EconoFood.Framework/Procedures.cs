@@ -57,5 +57,19 @@ namespace EconoFood.Framework
         /// </summary>
         public static readonly string Pedido_SELECT = "Pedido_SELECT";
         #endregion
+
+        #region USUARIO
+        public static readonly string Usuario_SELECT_ALL = "Usuario_SELECT_ALL";
+        public static readonly string Usuario_INSERT = "Usuario_INSERT";
+        public static readonly string Usuario_UPDATE = "Usuario_UPDATE";
+        public static readonly string Usuario_DELETE = "Usuario_DELETE";
+        #endregion
+
+        #region DOMINIO
+        public static readonly string Dominio_SELECT_ALL = "Dominio_SELECT_ALL";
+        public static readonly string Dominio_INSERT = "Dominio_INSERT";
+        public static readonly string Dominio_UPDATE = "Dominio_UPDATE";
+        public static readonly string Dominio_DELETE = "Dominio_DELETE";
+        #endregion
     }
 }

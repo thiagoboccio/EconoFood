@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PasswordHandler.cs" />
     <Compile Include="Procedures.cs" />
     <Compile Include="IBase.cs" />
     <Compile Include="Conector.cs" />

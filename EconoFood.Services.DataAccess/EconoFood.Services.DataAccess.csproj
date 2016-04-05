@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DominioDAL.cs" />
     <Compile Include="PedidoDAL.cs" />
     <Compile Include="ProdutoDAL.cs" />
     <Compile Include="ProdutoImagemDAL.cs" />
@@ -57,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EconoFood.Framework\EconoFood.Framework.csproj">
