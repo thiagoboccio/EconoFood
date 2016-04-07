@@ -64,7 +64,7 @@ namespace EconoFood.Admin.User
             { 
                 InserirUsuario();
                 CarregarUsuarios();
-                Popup("Cadastro efetuado com sucesso.");
+                Alert("Cadastro efetuado com sucesso.");
             }
         }
 

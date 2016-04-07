@@ -57,9 +57,15 @@ namespace EconoFood
             CamposObrigatorios = Campos;
         }
 
-        public void Popup(string msg)
+        public void Alert(string msg)
         {
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", string.Format("javascript:alert('{0}');", msg), true);
+        }
+
+        public void Popup(string url, string width, string height)
+        {
+            //ClientScript.RegisterClientScriptBlock(this.GetType(), "window.open", string.Format("javascript:window.open({0}, 'Despachar pedidos', width={1}, heigth={2});", url, width, height), true);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "window.open", string.Format("window.open({0}, 'Despachar pedidos', width={1}, heigth={2});", url, width, height), true);
         }
     }
 }

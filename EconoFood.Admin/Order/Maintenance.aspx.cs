@@ -9,18 +9,18 @@ namespace EconoFood.Admin.Order
 {
     public partial class Maintenance : PageHandler
     {
-        public IList<PedidoService.Pedido> Pedidos
+        public List<PedidoService.Pedido> Pedidos
         {
             get
             {
-                if (ViewState["Pedidos"] != null)
-                    return (IList<PedidoService.Pedido>)ViewState["Pedidos"];
+                if (Session["Pedidos"] != null)
+                    return (List<PedidoService.Pedido>)Session["Pedidos"];
 
                 return new List<PedidoService.Pedido>();
             }
             set
             {
-                ViewState["Pedidos"] = value;
+                Session["Pedidos"] = value;
             }
         }
 
@@ -54,6 +54,18 @@ namespace EconoFood.Admin.Order
 
             //var client = new PedidoService.PedidoClient();
             //Pedidos = client.Pesquisar(pesquisa, ToDate(txtDataInicio.Text), ToDate(txtDataFim.Text));
+        }
+
+        protected void btnDespachar_Click(object sender, EventArgs e)
+        {
+            if (Pedidos.Count == 0)
+                Alert("Favor buscar os pedidos à serem despachados.");
+            else if (Pedidos.FindAll(o => o.StatusPedido == PedidoService.ePedidoStatusPedido.ProdutoEntregue).Count > 0)
+                Alert("Existem pedidos concluídos na pesquisa, favor remove-los.");
+            else
+            {
+                Popup("Dispatch.aspx", "800", "800");
+            }
         }
     }
 }

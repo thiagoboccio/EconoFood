@@ -132,7 +132,7 @@ namespace EconoFood.Admin.Product
                     }
                 });
                 LimparSessao();
-                Popup("Produto cadastrado com sucesso.");
+                Alert("Produto cadastrado com sucesso.");
                 divManutencao.Visible = false;
             }
         }
@@ -167,10 +167,10 @@ namespace EconoFood.Admin.Product
                     }
                 }
                 else
-                    Popup("Formato do arquivo inválido.");                
+                    Alert("Formato do arquivo inválido.");                
             }
             else
-                Popup("Nenhuma imagem selecionada."); ;            
+                Alert("Nenhuma imagem selecionada."); ;            
         }
 
         protected void btnNovoProduto_Click(object sender, EventArgs e)

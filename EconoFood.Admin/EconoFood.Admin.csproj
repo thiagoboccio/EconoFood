@@ -136,6 +136,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Order\Dispatch.aspx" />
     <Content Include="Order\Maintenance.aspx" />
     <Content Include="Product\ImageHandler.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -312,6 +313,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Order\Dispatch.aspx.cs">
+      <DependentUpon>Dispatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\Dispatch.aspx.designer.cs">
+      <DependentUpon>Dispatch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Order\Maintenance.aspx.cs">
       <DependentUpon>Maintenance.aspx</DependentUpon>

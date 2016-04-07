@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Maintenance.aspx.cs" Inherits="EconoFood.Admin.Order.Maintenance" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Pedidos</h2>
-    <asp:Label runat="server" Text="Pedido" Width="150px" /><asp:TextBox ID="txtPedido" runat="server" Width="100" MaxLength="9" />
-    <asp:Label runat="server" Text="Situação Pagamento" Width="150px" /><asp:DropDownList ID="ddlSituacaoPagamento" runat="server" Width="150" /><br />
-    <asp:Label runat="server" Text="Data Início" Width="150px" /><asp:TextBox ID="txtDataInicio" runat="server" Width="100" MaxLength="10" />
-    <asp:Label runat="server" Text="Situação Envio" Width="150px" /><asp:DropDownList ID="ddlSituacaoEnvio" runat="server" Width="150" /><br />
-    <asp:Label runat="server" Text="Data Fim" Width="150px" /><asp:TextBox ID="txtDataFim" runat="server" Width="100" MaxLength="10"/>
-    <asp:Label runat="server" Text="Entregador" Width="150px" /><asp:DropDownList ID="ddlEntregador" runat="server" Width="150" /><br /><br />
-    <asp:Button ID="btnPesquisar" CssClass="btn btn-lg" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-    <asp:Button ID="btnDespachar" CssClass="btn btn-lg" runat="server" Text="Despachar" OnClick="btnDespachar_Click" OnClientClick="window.open('dispatch.aspx', 'Teste', 'width=800, heigth=800')" /><br /><br />
-    <br /><br />
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dispatch.aspx.cs" Inherits="EconoFood.Admin.Order.Dispatch" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server" onload="">
+    <div>
     <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" Width="800px">
         <Columns>
             <asp:TemplateField HeaderText="Pedido">
@@ -49,4 +48,7 @@
             </asp:TemplateField>            
         </Columns>    
     </asp:GridView>
-</asp:Content>
+    </div>
+    </form>
+</body>
+</html>
