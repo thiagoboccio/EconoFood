@@ -28,10 +28,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PesquisarPorID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDominio" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PesquisarPorIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="PesquisarPorIDResult" nillable="true" type="q4:ArrayOfDominio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Gravar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Dominio" nillable="true" type="q4:Dominio" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Dominio" nillable="true" type="q5:Dominio" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +59,7 @@
   <xs:element name="Excluir">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Dominio" nillable="true" type="q5:Dominio" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Dominio" nillable="true" type="q6:Dominio" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

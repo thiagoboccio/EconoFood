@@ -23,9 +23,15 @@ namespace EconoFood.Services
         public List<DTO.Dominio> PesquisarPorTipo(eTipoDominio idTipoDominio)
         {
             var bll = new Business.DominioBLL();
-            return bll.Listar().FindAll(o => o.Tipo == (short)idTipoDominio);
+            return bll.ObterPorTipo((short)idTipoDominio);
         }
 
+        public List<DTO.Dominio> PesquisarPorID(short idDominio)
+        {
+            var bll = new Business.DominioBLL();
+            return bll.ObterPorID(idDominio);
+        }
+        
         public int Gravar(DTO.Dominio Dominio)
         {
             var bll = new Business.DominioBLL();

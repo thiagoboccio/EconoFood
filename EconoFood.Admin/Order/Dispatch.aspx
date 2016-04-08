@@ -7,9 +7,10 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" onload="">
+    <form id="form1" runat="server">
     <div>
-    <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" Width="800px">
+        <asp:Button ID="btnPrint" CssClass="btn btn-lg" runat="server" Text="Imprimir" OnClientClick="javascript:window.print();"/><br />        
+        <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" Width="800px">
         <Columns>
             <asp:TemplateField HeaderText="Pedido">
                 <ItemTemplate>

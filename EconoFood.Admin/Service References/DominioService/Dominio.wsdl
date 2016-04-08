@@ -20,6 +20,12 @@
   <wsdl:message name="IDominio_PesquisarPorTipo_OutputMessage">
     <wsdl:part name="parameters" element="tns:PesquisarPorTipoResponse" />
   </wsdl:message>
+  <wsdl:message name="IDominio_PesquisarPorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarPorID" />
+  </wsdl:message>
+  <wsdl:message name="IDominio_PesquisarPorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarPorIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IDominio_Gravar_InputMessage">
     <wsdl:part name="parameters" element="tns:Gravar" />
   </wsdl:message>
@@ -40,6 +46,10 @@
     <wsdl:operation name="PesquisarPorTipo">
       <wsdl:input wsaw:Action="http://tempuri.org/IDominio/PesquisarPorTipo" message="tns:IDominio_PesquisarPorTipo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDominio/PesquisarPorTipoResponse" message="tns:IDominio_PesquisarPorTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarPorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDominio/PesquisarPorID" message="tns:IDominio_PesquisarPorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDominio/PesquisarPorIDResponse" message="tns:IDominio_PesquisarPorID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gravar">
       <wsdl:input wsaw:Action="http://tempuri.org/IDominio/Gravar" message="tns:IDominio_Gravar_InputMessage" />
@@ -63,6 +73,15 @@
     </wsdl:operation>
     <wsdl:operation name="PesquisarPorTipo">
       <soap:operation soapAction="http://tempuri.org/IDominio/PesquisarPorTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarPorID">
+      <soap:operation soapAction="http://tempuri.org/IDominio/PesquisarPorID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -11,22 +11,24 @@ namespace EconoFood.Services.Business
 {
     public class PedidoBLL
     {
-        public List<Pedido> Pesquisar(Pedido pedido)
+        public List<Pedido> Pesquisar(Pedido pedido, DateTime? inicio, DateTime? fim)
         {
             var DAL = new PedidoDAL();
-
-            int? idPedido = null;
-            DateTime? dataInicio;
-            DateTime? dataFim;
-            ePedido.StatusPedido? statusPedido;
-            ePedido.StatusPagamento? statusPagamento;
-            int? IdEntregador;
+            int? IdPedido = null;
+            int? IdEntregador = null;
+            ePedido.StatusPedido? statusPedido = null;
+            ePedido.StatusPagamento? statusPagamento = null;
 
             if (pedido.IdPedido > 0)
-                idPedido = pedido.IdPedido;
+                IdPedido = pedido.IdPedido;
+            if (pedido.IdEntregador > 0)
+                IdEntregador = pedido.IdEntregador;
+            if (pedido.StatusPedido != null)
+                statusPedido = pedido.StatusPedido;
+            if (pedido.StatusPagamento != null)
+                statusPagamento = pedido.StatusPagamento;
 
-            //return DAL.Pesquisar();
-            return null;
+            return DAL.Pesquisar(IdPedido, inicio, fim, pedido.StatusPedido, pedido.StatusPagamento, IdEntregador);            
         }
 
         public List<Pedido> Listar()

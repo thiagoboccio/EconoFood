@@ -96,6 +96,12 @@ namespace EconoFood.Admin.DominioService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PerfilUsuario = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SituacaoPagamento = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SituacaoEnvio = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -113,6 +119,12 @@ namespace EconoFood.Admin.DominioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDominio/PesquisarPorTipo", ReplyAction="http://tempuri.org/IDominio/PesquisarPorTipoResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio>> PesquisarPorTipoAsync(EconoFood.Admin.DominioService.eTipoDominio idTipoDominio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDominio/PesquisarPorID", ReplyAction="http://tempuri.org/IDominio/PesquisarPorIDResponse")]
+        System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio> PesquisarPorID(short idDominio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDominio/PesquisarPorID", ReplyAction="http://tempuri.org/IDominio/PesquisarPorIDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio>> PesquisarPorIDAsync(short idDominio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDominio/Gravar", ReplyAction="http://tempuri.org/IDominio/GravarResponse")]
         int Gravar(EconoFood.Admin.DominioService.Dominio Dominio);
@@ -168,6 +180,14 @@ namespace EconoFood.Admin.DominioService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio>> PesquisarPorTipoAsync(EconoFood.Admin.DominioService.eTipoDominio idTipoDominio) {
             return base.Channel.PesquisarPorTipoAsync(idTipoDominio);
+        }
+        
+        public System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio> PesquisarPorID(short idDominio) {
+            return base.Channel.PesquisarPorID(idDominio);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.DominioService.Dominio>> PesquisarPorIDAsync(short idDominio) {
+            return base.Channel.PesquisarPorIDAsync(idDominio);
         }
         
         public int Gravar(EconoFood.Admin.DominioService.Dominio Dominio) {

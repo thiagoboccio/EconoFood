@@ -75,7 +75,7 @@ namespace EconoFood.Admin.User
             {
                 Email = txtEmail.Text.Trim().ToUpper(),
                 Nome = txtNome.Text.Trim().ToUpper(),
-                Perfil = Convert.ToInt16(ddlPerfil.SelectedValue),
+                Perfil = ToInt16(ddlPerfil.SelectedValue),
                 Senha = txtSenha.Text.Trim(),
                 Status = ddlStatus.SelectedValue == "1" ? true : false
             });

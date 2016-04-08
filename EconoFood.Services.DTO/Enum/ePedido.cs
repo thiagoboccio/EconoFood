@@ -22,7 +22,7 @@ namespace EconoFood.Services.DTO.Enum
         {
             Pendente = 1,
             Pago = 2,
-            Devolvido = 3
+            Estornado = 3
         }
     }
 }

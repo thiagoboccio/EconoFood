@@ -26,7 +26,7 @@ namespace EconoFood.Admin.PedidoService {
         private System.DateTime DataPedidoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DataRecebimentoField;
+        private System.Nullable<System.DateTime> DataRecebimentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DocumentoReceptorField;
@@ -50,10 +50,10 @@ namespace EconoFood.Admin.PedidoService {
         private string ReceptorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EconoFood.Admin.PedidoService.ePedidoStatusPagamento StatusPagamentoField;
+        private System.Nullable<EconoFood.Admin.PedidoService.ePedidoStatusPagamento> StatusPagamentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EconoFood.Admin.PedidoService.ePedidoStatusPedido StatusPedidoField;
+        private System.Nullable<EconoFood.Admin.PedidoService.ePedidoStatusPedido> StatusPedidoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -79,7 +79,7 @@ namespace EconoFood.Admin.PedidoService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DataRecebimento {
+        public System.Nullable<System.DateTime> DataRecebimento {
             get {
                 return this.DataRecebimentoField;
             }
@@ -183,7 +183,7 @@ namespace EconoFood.Admin.PedidoService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EconoFood.Admin.PedidoService.ePedidoStatusPagamento StatusPagamento {
+        public System.Nullable<EconoFood.Admin.PedidoService.ePedidoStatusPagamento> StatusPagamento {
             get {
                 return this.StatusPagamentoField;
             }
@@ -196,7 +196,7 @@ namespace EconoFood.Admin.PedidoService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EconoFood.Admin.PedidoService.ePedidoStatusPedido StatusPedido {
+        public System.Nullable<EconoFood.Admin.PedidoService.ePedidoStatusPedido> StatusPedido {
             get {
                 return this.StatusPedidoField;
             }
@@ -229,7 +229,7 @@ namespace EconoFood.Admin.PedidoService {
         Pago = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Devolvido = 3,
+        Estornado = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -266,10 +266,10 @@ namespace EconoFood.Admin.PedidoService {
         System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido>> ListarAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPedido/Pesquisar", ReplyAction="http://tempuri.org/IPedido/PesquisarResponse")]
-        System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido> Pesquisar(EconoFood.Admin.PedidoService.Pedido pedido);
+        System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido> Pesquisar(EconoFood.Admin.PedidoService.Pedido pedido, System.DateTime inicio, System.DateTime fim);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPedido/Pesquisar", ReplyAction="http://tempuri.org/IPedido/PesquisarResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido>> PesquisarAsync(EconoFood.Admin.PedidoService.Pedido pedido);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido>> PesquisarAsync(EconoFood.Admin.PedidoService.Pedido pedido, System.DateTime inicio, System.DateTime fim);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPedido/Gravar", ReplyAction="http://tempuri.org/IPedido/GravarResponse")]
         int Gravar(EconoFood.Admin.PedidoService.Pedido pedido);
@@ -313,12 +313,12 @@ namespace EconoFood.Admin.PedidoService {
             return base.Channel.ListarAsync();
         }
         
-        public System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido> Pesquisar(EconoFood.Admin.PedidoService.Pedido pedido) {
-            return base.Channel.Pesquisar(pedido);
+        public System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido> Pesquisar(EconoFood.Admin.PedidoService.Pedido pedido, System.DateTime inicio, System.DateTime fim) {
+            return base.Channel.Pesquisar(pedido, inicio, fim);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido>> PesquisarAsync(EconoFood.Admin.PedidoService.Pedido pedido) {
-            return base.Channel.PesquisarAsync(pedido);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.PedidoService.Pedido>> PesquisarAsync(EconoFood.Admin.PedidoService.Pedido pedido, System.DateTime inicio, System.DateTime fim) {
+            return base.Channel.PesquisarAsync(pedido, inicio, fim);
         }
         
         public int Gravar(EconoFood.Admin.PedidoService.Pedido pedido) {

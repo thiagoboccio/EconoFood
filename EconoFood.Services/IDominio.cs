@@ -19,6 +19,9 @@ namespace EconoFood.Services
         List<DTO.Dominio> PesquisarPorTipo(eTipoDominio idTipoDominio);
 
         [OperationContract]
+        List<DTO.Dominio> PesquisarPorID(short idDominio);
+
+        [OperationContract]
         int Gravar(DTO.Dominio Dominio);
 
         [OperationContract]

@@ -67,5 +67,15 @@ namespace EconoFood
             //ClientScript.RegisterClientScriptBlock(this.GetType(), "window.open", string.Format("javascript:window.open({0}, 'Despachar pedidos', width={1}, heigth={2});", url, width, height), true);
             ClientScript.RegisterClientScriptBlock(this.GetType(), "window.open", string.Format("window.open({0}, 'Despachar pedidos', width={1}, heigth={2});", url, width, height), true);
         }
+
+        public short ToInt16(string valor) { return Convert.ToInt16(valor.Trim()); }
+
+        public int ToInt32(string valor) { return Convert.ToInt32(valor.Trim()); }
+
+        public long ToInt64(string valor) { return Convert.ToInt64(valor.Trim()); }
+
+        public decimal ToDecimal(string valor) { return Convert.ToDecimal (valor.Trim()); }
+
+        public DateTime ToDate(string valor) { return Convert.ToDateTime(valor.Trim()); }
     }
 }

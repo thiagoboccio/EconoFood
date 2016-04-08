@@ -70,6 +70,8 @@ namespace EconoFood.Framework
         public static readonly string Dominio_INSERT = "Dominio_INSERT";
         public static readonly string Dominio_UPDATE = "Dominio_UPDATE";
         public static readonly string Dominio_DELETE = "Dominio_DELETE";
+        public static readonly string Dominio_SELECT_POR_ID = "Dominio_SELECT_POR_ID";
+        public static readonly string Dominio_SELECT_POR_TIPO = "Dominio_SELECT_POR_TIPO";
         #endregion
     }
 }

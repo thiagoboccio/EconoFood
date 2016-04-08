@@ -26,18 +26,41 @@ namespace EconoFood.Admin.Order
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-                ListarPedidos();
+            if (!IsPostBack)
+            {
+                CarregarSituacaoPagamento();
+                CarregarSituacaoEnvio();
+            }
         }
 
-        private void ListarPedidos()
+        private void CarregarSituacaoEnvio()
         {
-            var client = new PedidoService.PedidoClient();
-            Pedidos = client.Listar();
+            var client = new DominioService.DominioClient();
 
-            gvPedidos.DataSource = Pedidos;
-            gvPedidos.DataBind();
+            ddlSituacaoEnvio.DataValueField = "Id";
+            ddlSituacaoEnvio.DataTextField = "Descricao";
+            ddlSituacaoEnvio.DataSource = client.PesquisarPorTipo(DominioService.eTipoDominio.SituacaoEnvio);
+            ddlSituacaoEnvio.DataBind();
         }
+
+        private void CarregarSituacaoPagamento()
+        {
+            var client = new DominioService.DominioClient();
+
+            ddlSituacaoPagamento.DataValueField = "Id";
+            ddlSituacaoPagamento.DataTextField = "Descricao";
+            ddlSituacaoPagamento.DataSource = client.PesquisarPorTipo(DominioService.eTipoDominio.SituacaoPagamento);
+            ddlSituacaoPagamento.DataBind();
+        }
+
+        //private void ListarPedidos()
+        //{
+        //    var client = new PedidoService.PedidoClient();
+        //    Pedidos = client.Listar();
+
+        //    gvPedidos.DataSource = Pedidos;
+        //    gvPedidos.DataBind();
+        //}
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -46,14 +69,17 @@ namespace EconoFood.Admin.Order
 
         private void Pesquisar()
         {
-            //var pesquisa = new PedidoService.Pedido();
-            //pesquisa.IdPedido = toInt32(txtPedido.Text);
-            //pesquisa.StatusPagamento = (PedidoService.ePedidoStatusPagamento)ddlSituacaoPagamento.SelectedValue;
-            //pesquisa.StatusPedido = (PedidoService.ePedidoStatusPedido)ddlSituacaoEnvio.SelectedValue;
-            //pesquisa.IdEntregador = ToInt32(ddlEntregador.SelectedValue);
+            var pesquisa = new PedidoService.Pedido();
+            pesquisa.IdPedido = ToInt32(txtPedido.Text);
+            pesquisa.StatusPagamento = (PedidoService.ePedidoStatusPagamento)ToInt16(ddlSituacaoPagamento.SelectedValue);
+            pesquisa.StatusPedido = (PedidoService.ePedidoStatusPedido)ToInt16(ddlSituacaoEnvio.SelectedValue);
+            pesquisa.IdEntregador = ToInt16(ddlEntregador.SelectedValue);
 
-            //var client = new PedidoService.PedidoClient();
-            //Pedidos = client.Pesquisar(pesquisa, ToDate(txtDataInicio.Text), ToDate(txtDataFim.Text));
+            var client = new PedidoService.PedidoClient();
+            Pedidos = client.Pesquisar(pesquisa, ToDate(txtDataInicio.Text), ToDate(txtDataFim.Text));
+
+            gvPedidos.DataSource = Pedidos;
+            gvPedidos.DataBind();
         }
 
         protected void btnDespachar_Click(object sender, EventArgs e)

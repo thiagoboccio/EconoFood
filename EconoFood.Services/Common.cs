@@ -7,6 +7,8 @@ namespace EconoFood.Services
 {
     public enum eTipoDominio
     {
-        PerfilUsuario = 1
+        PerfilUsuario = 1,
+        SituacaoPagamento = 2,
+        SituacaoEnvio = 3
     }    
 }
