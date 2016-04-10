@@ -13,6 +13,12 @@
   <wsdl:message name="IUsuario_Listar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsuario_ListarPorStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorStatus" />
+  </wsdl:message>
+  <wsdl:message name="IUsuario_ListarPorStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorStatusResponse" />
+  </wsdl:message>
   <wsdl:message name="IUsuario_PesquisarPorID_InputMessage">
     <wsdl:part name="parameters" element="tns:PesquisarPorID" />
   </wsdl:message>
@@ -36,6 +42,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/Listar" message="tns:IUsuario_Listar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/ListarResponse" message="tns:IUsuario_Listar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListarPorStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/ListarPorStatus" message="tns:IUsuario_ListarPorStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/ListarPorStatusResponse" message="tns:IUsuario_ListarPorStatus_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PesquisarPorID">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/PesquisarPorID" message="tns:IUsuario_PesquisarPorID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/PesquisarPorIDResponse" message="tns:IUsuario_PesquisarPorID_OutputMessage" />
@@ -53,6 +63,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Listar">
       <soap:operation soapAction="http://tempuri.org/IUsuario/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorStatus">
+      <soap:operation soapAction="http://tempuri.org/IUsuario/ListarPorStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

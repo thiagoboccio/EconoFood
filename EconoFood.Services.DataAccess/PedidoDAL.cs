@@ -61,11 +61,13 @@ namespace EconoFood.Services.DataAccess
             ePedido.StatusPedido? statusPedido,
             ePedido.StatusPagamento? statusPagamento,
             int? IdEntregador)
-        {
+        {            
             Conector conector = new Conector(Procedures.Pedido_SELECT);
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter { ParameterName = "@DataPedidoInicio", Value = dataInicio });
-            parametros.Add(new SqlParameter { ParameterName = "@DataPedidoFim", Value = dataFim });
+            //parametros.Add(new SqlParameter { ParameterName = "@DataPedidoInicio", Value = dataInicio  });
+            //parametros.Add(new SqlParameter { ParameterName = "@DataPedidoFim", Value = dataFim });
+            parametros.Add(new SqlParameter { ParameterName = "@DataPedidoInicio", Value = null });
+            parametros.Add(new SqlParameter { ParameterName = "@DataPedidoFim", Value = null });
             parametros.Add(new SqlParameter { ParameterName = "@IdPedido", Value = idPedido });
             parametros.Add(new SqlParameter { ParameterName = "@StatusPedido", Value = statusPedido });
             parametros.Add(new SqlParameter { ParameterName = "@StatusPagamento", Value = statusPagamento });
@@ -79,13 +81,13 @@ namespace EconoFood.Services.DataAccess
                 var pedido = new Pedido();
                 pedido.DataPedido = Convert.ToDateTime(linha["DataPedido"].ToString());
                 pedido.DataRecebimento = Convert.ToDateTime(linha["DataRecebimento"].ToString());
-                pedido.DocumentoReceptor = linha["DocumentoRecebimento"].ToString();
+                pedido.DocumentoReceptor = linha["DocumentoReceptor"].ToString();
                 pedido.IdCliente = Convert.ToInt32(linha["IdPedido"].ToString());
                 pedido.NomeCliente = linha["NomeCliente"].ToString();
                 pedido.IdEntregador = Convert.ToInt16(linha["IdEntregador"].ToString());
                 pedido.NomeEntregador = linha["NomeEntregador"].ToString();
                 pedido.IdPedido = Convert.ToInt32(linha["IdPedido"].ToString());
-                pedido.Receptor = linha["Recebimento"].ToString();
+                pedido.Receptor = linha["Receptor"].ToString();
                 pedido.StatusPagamento = (ePedido.StatusPagamento)Convert.ToInt16(linha["StatusPagamento"].ToString());
                 pedido.StatusPedido = (ePedido.StatusPedido)Convert.ToInt16(linha["StatusPedido"].ToString());
 

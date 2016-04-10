@@ -14,7 +14,10 @@ namespace EconoFood.Services
     {            
         [OperationContract]
         List<DTO.Usuario> Listar();
-        
+
+        [OperationContract]
+        List<DTO.Usuario> ListarPorStatus(bool retornarInativos);
+
         [OperationContract]
         DTO.Usuario PesquisarPorID(short idUsuario);
 

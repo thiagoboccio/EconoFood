@@ -15,20 +15,17 @@ namespace EconoFood.Services.Business
         {
             var DAL = new PedidoDAL();
             int? IdPedido = null;
-            int? IdEntregador = null;
             ePedido.StatusPedido? statusPedido = null;
             ePedido.StatusPagamento? statusPagamento = null;
 
             if (pedido.IdPedido > 0)
                 IdPedido = pedido.IdPedido;
-            if (pedido.IdEntregador > 0)
-                IdEntregador = pedido.IdEntregador;
             if (pedido.StatusPedido != null)
                 statusPedido = pedido.StatusPedido;
             if (pedido.StatusPagamento != null)
                 statusPagamento = pedido.StatusPagamento;
 
-            return DAL.Pesquisar(IdPedido, inicio, fim, pedido.StatusPedido, pedido.StatusPagamento, IdEntregador);            
+            return DAL.Pesquisar(IdPedido, inicio, fim, pedido.StatusPedido, pedido.StatusPagamento, pedido.IdEntregador);
         }
 
         public List<Pedido> Listar()

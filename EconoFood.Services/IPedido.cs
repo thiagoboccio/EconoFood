@@ -16,7 +16,7 @@ namespace EconoFood.Services
         IList<DTO.Pedido> Listar();
 
         [OperationContract]
-        IList<DTO.Pedido> Pesquisar(DTO.Pedido pedido, DateTime inicio, DateTime fim);
+        IList<DTO.Pedido> Pesquisar(DTO.Pedido pedido, DateTime? inicio, DateTime? fim);
 
         [OperationContract]
         int Gravar(DTO.Pedido pedido);        

@@ -14,7 +14,7 @@ namespace EconoFood.Services.DTO
         public string NomeCliente { get; set; }
         public ePedido.StatusPagamento? StatusPagamento { get; set; }        
         public ePedido.StatusPedido? StatusPedido { get; set; }
-        public short IdEntregador { get; set; }
+        public short? IdEntregador { get; set; }
         public string NomeEntregador { get; set; }
         public string Receptor { get; set; }
         public string DocumentoReceptor { get; set; }

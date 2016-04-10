@@ -13,7 +13,7 @@
       <xs:element minOccurs="0" name="DataRecebimento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DocumentoReceptor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
-      <xs:element minOccurs="0" name="IdEntregador" type="xs:short" />
+      <xs:element minOccurs="0" name="IdEntregador" nillable="true" type="xs:short" />
       <xs:element minOccurs="0" name="IdPedido" type="xs:int" />
       <xs:element minOccurs="0" name="NomeCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NomeEntregador" nillable="true" type="xs:string" />

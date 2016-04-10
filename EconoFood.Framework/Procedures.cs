@@ -63,6 +63,7 @@ namespace EconoFood.Framework
         public static readonly string Usuario_INSERT = "Usuario_INSERT";
         public static readonly string Usuario_UPDATE = "Usuario_UPDATE";
         public static readonly string Usuario_DELETE = "Usuario_DELETE";
+        public static readonly string Usuario_SELECT = "Usuario_SELECT";
         #endregion
 
         #region DOMINIO

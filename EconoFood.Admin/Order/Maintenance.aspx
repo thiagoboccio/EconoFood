@@ -8,7 +8,7 @@
     <asp:Label runat="server" Text="Data Fim" Width="150px" /><asp:TextBox ID="txtDataFim" runat="server" Width="100" MaxLength="10"/>
     <asp:Label runat="server" Text="Entregador" Width="150px" /><asp:DropDownList ID="ddlEntregador" runat="server" Width="150" /><br /><br />
     <asp:Button ID="btnPesquisar" CssClass="btn btn-lg" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-    <asp:Button ID="btnDespachar" CssClass="btn btn-lg" runat="server" Text="Despachar" OnClick="btnDespachar_Click" OnClientClick="window.open('dispatch.aspx', 'Teste', 'width=800, heigth=800')" /><br /><br />
+    <asp:Button ID="btnDespachar" CssClass="btn btn-lg" runat="server" Text="Despachar" OnClick="btnDespachar_Click" OnClientClick="window.open('dispatch.aspx', 'Teste', 'width=800, heigth=800')" Enabled="False" /><br /><br />
     <br /><br />
     <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" Width="800px">
         <Columns>

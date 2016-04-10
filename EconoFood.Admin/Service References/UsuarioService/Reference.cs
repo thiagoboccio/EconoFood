@@ -23,6 +23,15 @@ namespace EconoFood.Admin.UsuarioService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CPFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DataCadastroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DataNascimentoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -47,6 +56,45 @@ namespace EconoFood.Admin.UsuarioService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CPF {
+            get {
+                return this.CPFField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CPFField, value) != true)) {
+                    this.CPFField = value;
+                    this.RaisePropertyChanged("CPF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DataCadastro {
+            get {
+                return this.DataCadastroField;
+            }
+            set {
+                if ((this.DataCadastroField.Equals(value) != true)) {
+                    this.DataCadastroField = value;
+                    this.RaisePropertyChanged("DataCadastro");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DataNascimento {
+            get {
+                return this.DataNascimentoField;
+            }
+            set {
+                if ((this.DataNascimentoField.Equals(value) != true)) {
+                    this.DataNascimentoField = value;
+                    this.RaisePropertyChanged("DataNascimento");
+                }
             }
         }
         
@@ -148,6 +196,12 @@ namespace EconoFood.Admin.UsuarioService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/Listar", ReplyAction="http://tempuri.org/IUsuario/ListarResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario>> ListarAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/ListarPorStatus", ReplyAction="http://tempuri.org/IUsuario/ListarPorStatusResponse")]
+        System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario> ListarPorStatus(bool retornarInativos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/ListarPorStatus", ReplyAction="http://tempuri.org/IUsuario/ListarPorStatusResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario>> ListarPorStatusAsync(bool retornarInativos);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/PesquisarPorID", ReplyAction="http://tempuri.org/IUsuario/PesquisarPorIDResponse")]
         EconoFood.Admin.UsuarioService.Usuario PesquisarPorID(short idUsuario);
         
@@ -200,6 +254,14 @@ namespace EconoFood.Admin.UsuarioService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario>> ListarAsync() {
             return base.Channel.ListarAsync();
+        }
+        
+        public System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario> ListarPorStatus(bool retornarInativos) {
+            return base.Channel.ListarPorStatus(retornarInativos);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EconoFood.Admin.UsuarioService.Usuario>> ListarPorStatusAsync(bool retornarInativos) {
+            return base.Channel.ListarPorStatusAsync(retornarInativos);
         }
         
         public EconoFood.Admin.UsuarioService.Usuario PesquisarPorID(short idUsuario) {

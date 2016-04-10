@@ -14,5 +14,8 @@ namespace EconoFood.Services.DTO
         public short Perfil { get; set; }
         public bool Status { get; set; }
         public string Senha { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public string CPF { get; set; }
     }
 }

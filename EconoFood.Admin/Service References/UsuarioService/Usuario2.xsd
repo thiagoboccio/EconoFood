@@ -13,6 +13,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListarPorStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="retornarInativos" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="ListarPorStatusResult" nillable="true" type="q2:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PesquisarPorID">
     <xs:complexType>
       <xs:sequence>
@@ -23,14 +37,14 @@
   <xs:element name="PesquisarPorIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="PesquisarPorIDResult" nillable="true" type="q2:Usuario" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="PesquisarPorIDResult" nillable="true" type="q3:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Gravar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Usuario" nillable="true" type="q3:Usuario" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Usuario" nillable="true" type="q4:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -44,7 +58,7 @@
   <xs:element name="Excluir">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Usuario" nillable="true" type="q4:Usuario" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="Usuario" nillable="true" type="q5:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -20,6 +20,12 @@ namespace EconoFood.Services
             return bll.Listar();             
         }
 
+        public List<DTO.Usuario> ListarPorStatus(bool retornarInativos)
+        {
+            var bll = new Business.UsuarioBLL();
+            return bll.Listar(retornarInativos);
+        }
+
         public DTO.Usuario PesquisarPorID(short idUsuario)
         {
             var bll = new Business.UsuarioBLL();

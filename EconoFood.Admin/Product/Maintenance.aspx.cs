@@ -17,7 +17,7 @@ namespace EconoFood.Admin.Product
         {
             get
             {
-                if (int.TryParse(Session["idProduto"].ToString(), out intParser))
+                if (IsNumeric(Session["idProduto"].ToString()))
                     return int.Parse(Session["idProduto"].ToString());
                 else
                     return 0;

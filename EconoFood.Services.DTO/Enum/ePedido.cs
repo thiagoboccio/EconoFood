@@ -20,9 +20,9 @@ namespace EconoFood.Services.DTO.Enum
 
         public enum StatusPagamento
         {
-            Pendente = 1,
-            Pago = 2,
-            Estornado = 3
+            Pendente = 1002,
+            Pago = 1003,
+            Estornado = 1004
         }
     }
 }

@@ -10,7 +10,8 @@ namespace EconoFood
 {
     public class PageHandler : Page
     {
-        public int intParser;
+        private long longParser;
+        private DateTime dateParser;
 
         public List<String> CamposObrigatorios
         {
@@ -68,14 +69,45 @@ namespace EconoFood
             ClientScript.RegisterClientScriptBlock(this.GetType(), "window.open", string.Format("window.open({0}, 'Despachar pedidos', width={1}, heigth={2});", url, width, height), true);
         }
 
-        public short ToInt16(string valor) { return Convert.ToInt16(valor.Trim()); }
+        public short ToInt16(string valor)
+        {
+            if (IsNumeric(valor)) return Convert.ToInt16(valor.Trim());
 
-        public int ToInt32(string valor) { return Convert.ToInt32(valor.Trim()); }
+            return 0;
+        }
 
-        public long ToInt64(string valor) { return Convert.ToInt64(valor.Trim()); }
+        public int ToInt32(string valor)
+        {
+            if(IsNumeric(valor)) return Convert.ToInt32(valor.Trim());
 
-        public decimal ToDecimal(string valor) { return Convert.ToDecimal (valor.Trim()); }
+            return 0;
+        }
 
-        public DateTime ToDate(string valor) { return Convert.ToDateTime(valor.Trim()); }
+        public long ToInt64(string valor)
+        {
+            if (IsNumeric(valor)) return Convert.ToInt64(valor.Trim());
+
+            return 0;
+        }
+
+        public decimal ToDecimal(string valor)
+        {
+            if (IsNumeric(valor)) return Convert.ToDecimal (valor.Trim());
+
+            return 0;
+        }
+
+        public DateTime ToDate(string valor)
+        {
+            if (IsDate(valor)) return Convert.ToDateTime(valor.Trim());
+
+            return DateTime.MinValue;
+        }
+
+        public bool IsEmpty(string valor) { return string.IsNullOrEmpty(valor.Trim()); }
+
+        public bool IsNumeric(string valor) { return long.TryParse(valor.Trim(), out longParser); }
+
+        public bool IsDate(string valor) { return DateTime.TryParse(valor.Trim(), out dateParser); }
     }
 }

@@ -16,6 +16,12 @@ namespace EconoFood.Services.Business
             return DAL.Listar();
         }
 
+        public List<Usuario> Listar(bool listarInativos)
+        {
+            var DAL = new UsuarioDAL();
+            return DAL.Listar(listarInativos);
+        }
+
         public int Gravar(Usuario usuario)
         {
             var DAL = new UsuarioDAL();

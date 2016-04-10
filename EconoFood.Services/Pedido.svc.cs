@@ -25,7 +25,7 @@ namespace EconoFood.Services
             return BLL.Listar();
         }
 
-        public IList<DTO.Pedido> Pesquisar(DTO.Pedido pedido, DateTime inicio, DateTime fim)
+        public IList<DTO.Pedido> Pesquisar(DTO.Pedido pedido, DateTime? inicio, DateTime? fim)
         {
             var BLL = new PedidoBLL();
             return BLL.Pesquisar(pedido, inicio, fim);

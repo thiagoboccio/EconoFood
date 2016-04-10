@@ -35,7 +35,7 @@ namespace EconoFood.Admin.PedidoService {
         private int IdClienteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short IdEntregadorField;
+        private System.Nullable<short> IdEntregadorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdPedidoField;
@@ -118,7 +118,7 @@ namespace EconoFood.Admin.PedidoService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public short IdEntregador {
+        public System.Nullable<short> IdEntregador {
             get {
                 return this.IdEntregadorField;
             }

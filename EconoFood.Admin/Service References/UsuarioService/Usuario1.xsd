@@ -8,6 +8,9 @@
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
   <xs:complexType name="Usuario">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataCadastro" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:short" />
       <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
