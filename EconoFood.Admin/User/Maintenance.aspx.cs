@@ -53,8 +53,8 @@ namespace EconoFood.Admin.User
             if (ValidarDados())
             {
                 InserirUsuario();
-                CarregarUsuarios();
-                LimparCampos(Form.Controls[5]);
+                CarregarUsuarios();                
+                LimparCampos();                
                 LimparSessao();
                 Alert("Cadastro efetuado com sucesso.");
             }
@@ -111,13 +111,19 @@ namespace EconoFood.Admin.User
             gvUsuario.DataBind();
         }
 
-        private void LimparCampos(Control contentPlaceHolder)
+        private void LimparCampos()
         {
-            foreach (Control controle in contentPlaceHolder.Controls)
+            for (int i = 0; i < Form.Controls.Count; i++)
             {
-                if (controle is TextBox) ((TextBox)controle).Text = string.Empty;
-                if (controle is DropDownList) ((DropDownList)controle).SelectedValue = "-1";
-            }
+                if (Form.Controls[i].GetType() == new ContentPlaceHolder().GetType())
+                {
+                    foreach (Control controle in Form.Controls[i].Controls)
+                    {
+                        if (controle is TextBox) ((TextBox)controle).Text = string.Empty;
+                        if (controle is DropDownList) ((DropDownList)controle).SelectedValue = "-1";
+                    }
+                }
+            }            
         }
 
         private void InserirUsuario()

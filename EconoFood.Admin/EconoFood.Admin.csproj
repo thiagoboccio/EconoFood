@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Authentication.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -132,6 +133,7 @@
     <Content Include="Content\Img\1451865573_Add.png" />
     <Content Include="Content\Img\1451978009_remove-circle-outline.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="FacebookIntegration.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -298,6 +300,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authentication.aspx.cs">
+      <DependentUpon>Authentication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication.aspx.designer.cs">
+      <DependentUpon>Authentication.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,9 +337,6 @@
     </Compile>
     <Compile Include="Order\Maintenance.aspx.designer.cs">
       <DependentUpon>Maintenance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PageHandler.cs">
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Product\ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
@@ -407,6 +413,12 @@
     <WCFMetadataStorage Include="Service References\PedidoService\" />
     <WCFMetadataStorage Include="Service References\ProdutoService\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EconoFood.Framework\EconoFood.Framework.csproj">
+      <Project>{aef83c7a-25ed-4816-8751-049d6646cd3e}</Project>
+      <Name>EconoFood.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

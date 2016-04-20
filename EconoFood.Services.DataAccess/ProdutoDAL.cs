@@ -118,6 +118,7 @@ namespace EconoFood.Services.DataAccess
                 produto.IdProduto = Convert.ToInt32(linha["IdProduto"].ToString());
                 produto.Nome = linha["Nome"].ToString();
                 produto.Status = int.Parse(linha["Status"].ToString());
+                produto.TipoProduto = int.Parse(linha["TipoProduto"].ToString());
                 retorno.Add(produto);
             }
 

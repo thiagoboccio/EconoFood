@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a1d711f4-5981-45d1-b3d7-895182c92365" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50229/Dominio.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Dominio.xsd" MetadataType="Schema" ID="5942c48f-93ab-40e9-856f-57aa8fe9e32e" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?xsd=xsd2" />
+    <MetadataFile FileName="Dominio1.xsd" MetadataType="Schema" ID="6e1e7c17-ca43-41c7-a5d3-0f1344d6bbb2" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?xsd=xsd3" />
+    <MetadataFile FileName="Dominio2.xsd" MetadataType="Schema" ID="e4fe8f3c-76e5-4637-bb27-0eedaabdb649" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?xsd=xsd0" />
+    <MetadataFile FileName="Dominio.disco" MetadataType="Disco" ID="60a18afd-dc68-436f-abb7-12e386c737d8" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?disco" />
+    <MetadataFile FileName="Dominio.wsdl" MetadataType="Wsdl" ID="72d55fb6-4417-4596-8fe6-faba8d7be361" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?wsdl" />
+    <MetadataFile FileName="Dominio3.xsd" MetadataType="Schema" ID="f35f3068-f515-43a1-a8b4-03ec7258bdf8" SourceId="1" SourceUrl="http://localhost:50229/Dominio.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

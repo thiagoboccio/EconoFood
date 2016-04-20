@@ -18,5 +18,7 @@ namespace EconoFood.Services.DTO
         public int Status { get; set; }
         [DataMember]
         public List<ProdutoImagem> Imagens { get; set; }
+        [DataMember]
+        public int TipoProduto { get; set; }
     }
 }

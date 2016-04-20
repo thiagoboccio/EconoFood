@@ -9,6 +9,7 @@ namespace EconoFood.Services
     {
         PerfilUsuario = 1,
         SituacaoPagamento = 2,
-        SituacaoEnvio = 3
+        SituacaoEnvio = 3,
+        TipoProduto = 4
     }    
 }
