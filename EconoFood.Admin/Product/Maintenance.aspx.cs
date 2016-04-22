@@ -27,20 +27,7 @@ namespace EconoFood.Admin.Product
                 Session["idProduto"] = value;
             }
         }
-        //public IList<EconoFood.ProdutoService.ProdutoImagem> Imagens
-        //{
-        //    get
-        //    {
-        //        if (Session["Imagens"] != null)
-        //            return (List<EconoFood.ProdutoService.ProdutoImagem>)Session["Imagens"];
 
-        //        return new List<EconoFood.ProdutoService.ProdutoImagem>();
-        //    }
-        //    set
-        //    {
-        //        Session["Imagens"] = value;
-        //    }
-        //}
         public ProdutoService.ProdutoImagem Imagem1
         {
             get
@@ -82,8 +69,17 @@ namespace EconoFood.Admin.Product
         protected void Page_Load(object sender, EventArgs e)
         {
             fuImagens.Attributes["onchange"] = "UploadFile(this)";
-            //fuImagens.Attributes.Add("onchange", "document.getElementById('" + btnAdicionarImagem.ClientID + "').click()");
-            //imgbtnUpLoader.Attributes.Add("onclick", "document.getElementById('" + fuImagens.ClientID + "').click()");
+
+            if (!IsPostBack)
+                Inicializar();            
+        }
+
+        private void Inicializar()
+        {
+            var client = new DominioService.DominioClient();
+            ddlTipoProduto.Items.Add(new ListItem { Selected = true, Text = "SELECIONE", Value = "-1" });
+            ddlTipoProduto.DataSource = client.PesquisarPorTipo(DominioService.eTipoDominio.TipoProduto);
+            ddlTipoProduto.DataBind();
         }
 
         protected void btnPesquisarProduto_Click(object sender, EventArgs e)
@@ -128,7 +124,8 @@ namespace EconoFood.Admin.Product
                         IdProduto = idProduto > 0 ? idProduto : 0,
                         Nome = txtProduto.Text.Trim(),
                         Status = int.Parse(ddlStatus.SelectedValue),
-                        Imagens = CarregarListaImagens()
+                        Imagens = CarregarListaImagens(),
+                        TipoProduto=ToInt32(ddlTipoProduto.SelectedValue)
                     }
                 });
                 LimparSessao();
@@ -239,8 +236,13 @@ namespace EconoFood.Admin.Product
             else
                 RemoverNotificacaoCampo(ddlStatus);
 
-            if ((Imagem1 == null || Imagem1.Imagem == null || Imagem1.Imagem.Length == 0) ||
-                (Imagem2 == null || Imagem2.Imagem == null || Imagem2.Imagem.Length == 0) ||
+            if (int.Parse(ddlTipoProduto.SelectedValue) == -1)
+                NotificarCampo(ddlTipoProduto);
+            else
+                RemoverNotificacaoCampo(ddlTipoProduto);
+
+            if ((Imagem1 == null || Imagem1.Imagem == null || Imagem1.Imagem.Length == 0) &&
+                (Imagem2 == null || Imagem2.Imagem == null || Imagem2.Imagem.Length == 0) &&
                 (Imagem3 == null || Imagem3.Imagem == null || Imagem3.Imagem.Length == 0))
                 NotificarCampo(Imagens);
             else

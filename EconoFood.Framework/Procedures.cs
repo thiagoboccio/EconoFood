@@ -74,5 +74,12 @@ namespace EconoFood.Framework
         public static readonly string Dominio_SELECT_POR_ID = "Dominio_SELECT_POR_ID";
         public static readonly string Dominio_SELECT_POR_TIPO = "Dominio_SELECT_POR_TIPO";
         #endregion
+
+        #region PRECIFICACAO
+        public static readonly string Precificacao_SELECT_ALL = "Precificacao_SELECT_ALL";
+        public static readonly string Precificacao_INSERT = "Precificacao_INSERT";
+        public static readonly string Precificacao_UPDATE = "Precificacao_UPDATE";
+        public static readonly string Precificacao_DELETE = "Precificacao_DELETE";
+        #endregion
     }
 }

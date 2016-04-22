@@ -52,7 +52,7 @@ namespace EconoFood.Services.DataAccess
                     
                     parametros.Add(new SqlParameter { ParameterName = "@Status", SqlDbType = SqlDbType.SmallInt, Value = produto.Status });
                     parametros.Add(new SqlParameter { ParameterName = "@Nome", SqlDbType = SqlDbType.VarChar, Value = produto.Nome });
-                    
+                    parametros.Add(new SqlParameter { ParameterName = "@TipoProduto", SqlDbType = SqlDbType.Int, Value = produto.TipoProduto });
 
                     conector.ExecuteNonQuery(parametros);
 

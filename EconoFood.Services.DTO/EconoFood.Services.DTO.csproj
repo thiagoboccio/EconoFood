@@ -47,6 +47,7 @@
     <Compile Include="Dominio.cs" />
     <Compile Include="Enum\ePedido.cs" />
     <Compile Include="Pedido.cs" />
+    <Compile Include="Precificacao.cs" />
     <Compile Include="ProdutoOrigem.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoDetalhe.cs" />

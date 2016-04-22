@@ -12,6 +12,7 @@
       <xs:element minOccurs="0" name="Imagens" nillable="true" type="tns:ArrayOfProdutoImagem" />
       <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoProduto" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Produto" nillable="true" type="tns:Produto" />

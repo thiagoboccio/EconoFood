@@ -102,6 +102,9 @@ namespace EconoFood.Admin.DominioService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SituacaoEnvio = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TipoProduto = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

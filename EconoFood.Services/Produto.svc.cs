@@ -42,6 +42,6 @@ namespace EconoFood.Services
         {
             var bll = new Business.ProdutoImagemBLL();
             return bll.ListarImagens(idProduto);
-        }
+        }        
     }
 }

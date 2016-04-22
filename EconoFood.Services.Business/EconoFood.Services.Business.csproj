@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DominioBLL.cs" />
     <Compile Include="PedidoBLL.cs" />
+    <Compile Include="PrecificacaoBLL.cs" />
     <Compile Include="ProdutoBLL.cs" />
     <Compile Include="ProdutoImagemBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

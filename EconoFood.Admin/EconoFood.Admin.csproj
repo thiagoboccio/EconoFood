@@ -143,6 +143,7 @@
     <Content Include="Product\ImageHandler.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Product\Maintenance.aspx" />
+    <Content Include="Product\Precification.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -347,6 +348,13 @@
     </Compile>
     <Compile Include="Product\Maintenance.aspx.designer.cs">
       <DependentUpon>Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Precification.aspx.cs">
+      <DependentUpon>Precification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Precification.aspx.designer.cs">
+      <DependentUpon>Precification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\DominioService\Reference.cs">

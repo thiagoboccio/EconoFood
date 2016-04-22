@@ -59,6 +59,15 @@
             <asp:ListItem Value="0">Inativo</asp:ListItem>
             </asp:DropDownList>        
         </p>        
+        <p>
+            <asp:Label ID="lblTipoProduto" runat="server" Text="Tipo Produto" Width="150"/>
+            <asp:DropDownList runat="server" ID="ddlTipoProduto" ToolTip="Tipo do Produto" DataTextField="Descricao" DataValueField="Id">            
+            </asp:DropDownList>        
+        </p>
+        <p>
+            <asp:Label ID="lblDescricao" runat="server" Text="Descrição do Produto" Width="150"/>
+            <asp:TextBox TextMode="MultiLine" runat="server" Width="300px" Height="50px" MaxLength="200"></asp:TextBox>
+        </p>
         <span>Imagens</span>
         <asp:FileUpload ID="fuImagens" runat="server" ToolTip="Adicione uma foto do produto"/>
         <asp:Button ID="btnAdicionarImagem" Text="Adicionar Imagem" runat="server" OnClick="btnAdicionarImagem_Click" Style="display:none;" />

@@ -34,6 +34,9 @@ namespace EconoFood.Admin.ProdutoService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int StatusField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TipoProdutoField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -92,6 +95,19 @@ namespace EconoFood.Admin.ProdutoService {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TipoProduto {
+            get {
+                return this.TipoProdutoField;
+            }
+            set {
+                if ((this.TipoProdutoField.Equals(value) != true)) {
+                    this.TipoProdutoField = value;
+                    this.RaisePropertyChanged("TipoProduto");
                 }
             }
         }

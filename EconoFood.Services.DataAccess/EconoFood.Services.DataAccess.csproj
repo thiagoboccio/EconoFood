@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DominioDAL.cs" />
     <Compile Include="PedidoDAL.cs" />
+    <Compile Include="PrecificacaoDAL.cs" />
     <Compile Include="ProdutoDAL.cs" />
     <Compile Include="ProdutoImagemDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
