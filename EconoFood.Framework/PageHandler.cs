@@ -10,6 +10,7 @@ namespace EconoFood
 {
     public class PageHandler : Page
     {
+        private decimal decimalParser;
         private long longParser;
         private DateTime dateParser;
 
@@ -92,7 +93,7 @@ namespace EconoFood
 
         public decimal ToDecimal(string valor)
         {
-            if (IsNumeric(valor)) return Convert.ToDecimal (valor.Trim());
+            if (IsDecimal(valor)) return Convert.ToDecimal (valor.Trim());
 
             return 0;
         }
@@ -107,6 +108,8 @@ namespace EconoFood
         public bool IsEmpty(string valor) { return string.IsNullOrEmpty(valor.Trim()); }
 
         public bool IsNumeric(string valor) { return long.TryParse(valor.Trim(), out longParser); }
+
+        public bool IsDecimal(string valor) { return Decimal.TryParse(valor.Trim(), out decimalParser); }
 
         public bool IsDate(string valor) { return DateTime.TryParse(valor.Trim(), out dateParser); }
     }

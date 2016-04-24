@@ -63,6 +63,7 @@
   <ItemGroup>
     <Content Include="Pedido.svc" />
     <Content Include="Dominio.svc" />
+    <Content Include="Precificacao.svc" />
     <Content Include="Usuario.svc" />
     <Content Include="Produto.svc" />
     <Content Include="Web.config" />
@@ -71,12 +72,16 @@
     <Compile Include="Common.cs" />
     <Compile Include="IPedido.cs" />
     <Compile Include="IDominio.cs" />
+    <Compile Include="IPrecificacao.cs" />
     <Compile Include="IUsuario.cs" />
     <Compile Include="Pedido.svc.cs">
       <DependentUpon>Pedido.svc</DependentUpon>
     </Compile>
     <Compile Include="Dominio.svc.cs">
       <DependentUpon>Dominio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Precificacao.svc.cs">
+      <DependentUpon>Precificacao.svc</DependentUpon>
     </Compile>
     <Compile Include="Usuario.svc.cs">
       <DependentUpon>Usuario.svc</DependentUpon>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPrecificacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Precificacao" nillable="true" type="tns:Precificacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrecificacao" nillable="true" type="tns:ArrayOfPrecificacao" />
+  <xs:complexType name="Precificacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdPrecificacao" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProduto" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentualAplicado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorCompra" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorVenda" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Precificacao" nillable="true" type="tns:Precificacao" />
+</xs:schema>

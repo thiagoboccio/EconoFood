@@ -209,6 +209,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\PrecificacaoService\EconoFood.Admin.PrecificacaoService.Precificacao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PrecificacaoService\Precificacao.disco" />
+    <None Include="Service References\PrecificacaoService\configuration91.svcinfo" />
+    <None Include="Service References\PrecificacaoService\configuration.svcinfo" />
+    <None Include="Service References\PrecificacaoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\ProdutoService\EconoFood.Admin.ProdutoService.GravarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -235,6 +245,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PedidoService\Pedido3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrecificacaoService\Precificacao.wsdl" />
+    <None Include="Service References\PrecificacaoService\Precificacao.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrecificacaoService\Precificacao1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrecificacaoService\Precificacao2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ProdutoService\Produto.disco" />
@@ -367,6 +387,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PrecificacaoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ProdutoService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -419,6 +444,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DominioService\" />
     <WCFMetadataStorage Include="Service References\PedidoService\" />
+    <WCFMetadataStorage Include="Service References\PrecificacaoService\" />
     <WCFMetadataStorage Include="Service References\ProdutoService\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>

@@ -15,5 +15,23 @@ namespace EconoFood.Services.Business
             var DAL = new PrecificacaoDAL();
             return DAL.Inserir(precificacao);
         }
+
+        public List<Precificacao> Listar()
+        {
+            var DAL = new PrecificacaoDAL();
+            return DAL.Listar();
+        }
+
+        public Precificacao PesquisarPorID(Precificacao precificacao)
+        {
+            var DAL = new PrecificacaoDAL();
+            return DAL.PesquisarPorID(precificacao);
+        }
+
+        public List<Precificacao> PesquisarPorProduto(Precificacao precificacao)
+        {
+            var DAL = new PrecificacaoDAL();
+            return DAL.PesquisarPorProduto(precificacao);
+        }
     }
 }

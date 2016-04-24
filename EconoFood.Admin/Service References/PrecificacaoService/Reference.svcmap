@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f27154e1-2991-4045-b919-37e88c4c37ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50229/Precificacao.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Precificacao.xsd" MetadataType="Schema" ID="70e4e651-63f8-44bf-ad30-7e4bc01465ea" SourceId="1" SourceUrl="http://localhost:50229/Precificacao.svc?xsd=xsd0" />
+    <MetadataFile FileName="Precificacao1.xsd" MetadataType="Schema" ID="d5ae7544-0952-4959-96af-c8b026aef9bd" SourceId="1" SourceUrl="http://localhost:50229/Precificacao.svc?xsd=xsd2" />
+    <MetadataFile FileName="Precificacao.disco" MetadataType="Disco" ID="6f89b6aa-d541-4561-a1cd-fc485c395f24" SourceId="1" SourceUrl="http://localhost:50229/Precificacao.svc?disco" />
+    <MetadataFile FileName="Precificacao2.xsd" MetadataType="Schema" ID="84f8d601-8af3-4099-a8e4-a4f60edf0485" SourceId="1" SourceUrl="http://localhost:50229/Precificacao.svc?xsd=xsd1" />
+    <MetadataFile FileName="Precificacao.wsdl" MetadataType="Wsdl" ID="edb7031c-f6e1-4048-a6cd-c320058ffe8b" SourceId="1" SourceUrl="http://localhost:50229/Precificacao.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -12,7 +12,6 @@ C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Servic
 C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services\bin\EconoFood.Services.DTO.pdb
 C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services\bin\EconoFood.Services.DataAccess.pdb
 C:\Users\Thiago\documents\visual studio 2015\Projects\EconoFood\EconoFood.Services\bin\EconoFood.Framework.pdb
-C:\Projetos\EconoFood\EconoFood.Services\obj\Debug\EconoFood.Services.csprojResolveAssemblyReference.cache
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.dll.config
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.dll
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.pdb
@@ -24,5 +23,6 @@ C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.Business.pdb
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.DTO.pdb
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Services.DataAccess.pdb
 C:\Projetos\EconoFood\EconoFood.Services\bin\EconoFood.Framework.pdb
+C:\Projetos\EconoFood\EconoFood.Services\obj\Debug\EconoFood.Services.csprojResolveAssemblyReference.cache
 C:\Projetos\EconoFood\EconoFood.Services\obj\Debug\EconoFood.Services.dll
 C:\Projetos\EconoFood\EconoFood.Services\obj\Debug\EconoFood.Services.pdb

@@ -76,7 +76,9 @@ namespace EconoFood.Framework
         #endregion
 
         #region PRECIFICACAO
-        public static readonly string Precificacao_SELECT_ALL = "Precificacao_SELECT_ALL";
+        public static readonly string Precificacao_SELECT = "Precificacao_SELECT";
+        public static readonly string Precificacao_SELECT_ALL = "Precificacao_SELECT_ALL";        
+        public static readonly string Precificacao_SELECT_POR_PRODUTO = "Precificacao_SELECT_POR_PRODUTO";
         public static readonly string Precificacao_INSERT = "Precificacao_INSERT";
         public static readonly string Precificacao_UPDATE = "Precificacao_UPDATE";
         public static readonly string Precificacao_DELETE = "Precificacao_DELETE";
