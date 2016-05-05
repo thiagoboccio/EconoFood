@@ -9,7 +9,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="Nome" />
-            <asp:BoundField DataField="Descricao" />
+            <asp:BoundField DataField="" />
             <asp:TemplateField>
                 <ItemTemplate>
                     <asp:ImageButton ID="ImageButton1" runat="server" />
@@ -17,17 +17,17 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    Monte a sua lista de compras:<br />
-    produto 1 - produto 2<br />
-    produto 1 - produto 2<br />
-    produto 1 - produto 2<br />
-    produto 1 - produto 2<br />
-    produto 1 - produto 2<br /><br />
-    Lista de compra:<br />
-    produto 1(2) - produto 2(3)<br />
-    produto 1(1) - produto 2(1)<br /><br />
-    Buscar melhores preços<br />
-    Melhor preço: R$150 - EXTRA Supermercados<br />
-    R$165 - Sonda | R$168 - Mambo | R$170 - Pão de Açucar<br />
-    Os valores são aproximados, dependem de cadastro no site do fornecedor para confirmação. Frete não incluso.
+    <br />
+    <br />
+    <asp:Repeater ID="rptProdutos" runat="server">
+        <ItemTemplate>
+            <div style="float:left;">
+                <asp:Image runat="server" ID="imgProduto" /><br />
+                <asp:Label runat="server" ID="lblNome" Text=<%# DataBinder.Eval(Container.DataItem, "Nome") %> /><br />
+                <asp:Label runat="server" ID="lblPreco" Text=<%# DataBinder.Eval(Container.DataItem, "Preco") %> /><br />
+                <asp:Label runat="server" ID="lblDescricao" Text=<%# DataBinder.Eval(Container.DataItem, "Descricao") %> /><br />
+                <asp:Button runat="server" Text="Adicionar à lista" />
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
 </asp:Content>

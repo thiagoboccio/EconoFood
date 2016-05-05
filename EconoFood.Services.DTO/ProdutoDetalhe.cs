@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace EconoFood.Services.DTO
 {
-    class ProdutoDetalhe
+    public class ProdutoDetalhe
     {
+        public int IdProdutoDetalhe { get; set; }
+        public int IdProduto { get; set; }
+        public string Dimensao { get; set; }
+        public string Peso { get; set; }
+        public string Descricao { get; set; }
     }
 }

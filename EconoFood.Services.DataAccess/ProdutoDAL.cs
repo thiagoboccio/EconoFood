@@ -93,9 +93,15 @@ namespace EconoFood.Services.DataAccess
             while (resultado.Read())
             {
                 var produto = new Produto();
+                produto.Detalhe = new ProdutoDetalhe();
                 produto.IdProduto = Convert.ToInt32(resultado["IdProduto"].ToString());
                 produto.Nome = resultado["Nome"].ToString();
                 produto.Status = int.Parse(resultado["Status"].ToString());
+                produto.Detalhe.Descricao = resultado["Descricao"].ToString();
+                produto.Detalhe.Dimensao = resultado["Dimensao"].ToString();
+                produto.Detalhe.IdProduto = Convert.ToInt32(resultado["IdProduto"]);
+                produto.Detalhe.IdProdutoDetalhe = Convert.ToInt32(resultado["IdProdutoDetalhe"]);
+                produto.Detalhe.Peso = resultado["Peso"].ToString();
                 retorno.Add(produto);
             }
 
