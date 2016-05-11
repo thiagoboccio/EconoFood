@@ -28,6 +28,21 @@ namespace EconoFood.Admin.Product
             }
         }
 
+        public int idProdutoDetalhe
+        {
+            get
+            {
+                if (IsNumeric(Session["idProdutoDetalhe"].ToString()))
+                    return int.Parse(Session["idProdutoDetalhe"].ToString());
+                else
+                    return 0;
+            }
+            set
+            {
+                Session["idProdutoDetalhe"] = value;
+            }
+        }
+
         public ProdutoService.ProdutoImagem Imagem1
         {
             get
@@ -95,8 +110,10 @@ namespace EconoFood.Admin.Product
         {
             if (e.CommandName.Equals("Manutencao"))
             {
+                var args = e.CommandArgument.ToString().Split(';');
                 LimparSessao();
-                idProduto = int.Parse(e.CommandArgument.ToString());
+                idProduto = int.Parse(args[0]);
+                idProdutoDetalhe = int.Parse(args[1]);
                 divManutencao.Visible = true;
 
                 PreencherCamposManutencao(idProduto);
@@ -117,15 +134,22 @@ namespace EconoFood.Admin.Product
             if (ValidarCadastroProduto())
             {
                 var client = new ProdutoService.ProdutoClient();
+                var detalhe = new ProdutoService.ProdutoDetalhe();
+                detalhe.IdProdutoDetalhe = idProdutoDetalhe > 0 ? idProdutoDetalhe : 0;
+                detalhe.Descricao = txtDescricao.Text.Trim();
+                detalhe.Dimensao = txtDimensao.Text.Trim();
+                detalhe.Peso = txtPeso.Text.Trim();
+
                 client.Gravar(new ProdutoService.GravarRequest
-                {
+                {                    
                     produto = new ProdutoService.Produto
                     {
                         IdProduto = idProduto > 0 ? idProduto : 0,
                         Nome = txtProduto.Text.Trim(),
                         Status = int.Parse(ddlStatus.SelectedValue),
                         Imagens = CarregarListaImagens(),
-                        TipoProduto=ToInt32(ddlTipoProduto.SelectedValue)
+                        TipoProduto=ToInt32(ddlTipoProduto.SelectedValue),
+                        Detalhe = detalhe
                     }
                 });
                 LimparSessao();
@@ -241,6 +265,11 @@ namespace EconoFood.Admin.Product
             else
                 RemoverNotificacaoCampo(ddlTipoProduto);
 
+            if (IsEmpty(txtDescricao.Text))
+                NotificarCampo(txtDescricao);
+            else
+                RemoverNotificacaoCampo(txtDescricao);
+
             if ((Imagem1 == null || Imagem1.Imagem == null || Imagem1.Imagem.Length == 0) &&
                 (Imagem2 == null || Imagem2.Imagem == null || Imagem2.Imagem.Length == 0) &&
                 (Imagem3 == null || Imagem3.Imagem == null || Imagem3.Imagem.Length == 0))
@@ -257,26 +286,33 @@ namespace EconoFood.Admin.Product
             var produto = client.PesquisarPorID(new ProdutoService.PesquisarPorIDRequest { idProduto = idProduto });
             txtProduto.Text = produto.PesquisarPorIDResult.Nome;
             ddlStatus.SelectedValue = produto.PesquisarPorIDResult.Status.ToString();
+            txtDescricao.Text = produto.PesquisarPorIDResult.Detalhe.Descricao;
+            txtPeso.Text = produto.PesquisarPorIDResult.Detalhe.Peso;
+            txtDimensao.Text = produto.PesquisarPorIDResult.Detalhe.Dimensao;
 
             var imagens = client.ListarImagens(new ListarImagensRequest { idProduto = idProduto });
             if (imagens.ListarImagensResult != null && imagens.ListarImagensResult.Count > 0)
             {
+                ProdutoImagem img = new ProdutoImagem();
                 if (imagens.ListarImagensResult[0] != null)
-                {
-                    ProdutoImagem img = new ProdutoImagem();
+                {                    
                     img.IdImagem = imagens.ListarImagensResult[0].IdImagem;
                     img.IdProduto = imagens.ListarImagensResult[0].IdProduto;
                     img.Imagem = imagens.ListarImagensResult[0].Imagem;
                     Imagem1 = img;
                     ExecutarHandler(1);
-
+                }
+                if (imagens.ListarImagensResult.Count > 1 && imagens.ListarImagensResult[1] != null)
+                {
                     img = new ProdutoImagem();
                     img.IdImagem = imagens.ListarImagensResult[1].IdImagem;
                     img.IdProduto = imagens.ListarImagensResult[1].IdProduto;
                     img.Imagem = imagens.ListarImagensResult[1].Imagem;
                     Imagem2 = img;
                     ExecutarHandler(2);
-
+                }
+                if (imagens.ListarImagensResult.Count > 2 && imagens.ListarImagensResult[2] != null)
+                {
                     img = new ProdutoImagem();
                     img.IdImagem = imagens.ListarImagensResult[2].IdImagem;
                     img.IdProduto = imagens.ListarImagensResult[2].IdProduto;

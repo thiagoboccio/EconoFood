@@ -37,7 +37,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:ImageButton ID="imgBtnManutencao" Width="20px" Height="20px" runat="server" ImageUrl="~/Content/Img/1450846683_Working_Tools_2.png" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdProduto") %>' CommandName="Manutencao" />
+                        <asp:ImageButton ID="imgBtnManutencao" Width="20px" Height="20px" runat="server" ImageUrl="~/Content/Img/1450846683_Working_Tools_2.png" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdProduto").ToString() + ";" + DataBinder.Eval(Container.DataItem, "Detalhe.IdProdutoDetalhe").ToString() %>' CommandName="Manutencao" />
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -49,7 +49,7 @@
     <div id="divManutencao" runat="server" visible="false">
         <h3>Cadastro</h3>
         <p>
-            <asp:Label ID="lblProduto" runat="server" Text="Produto" Width="150"/><asp:TextBox runat="server" ID="txtProduto" ToolTip="Nome do Produto"></asp:TextBox><br />
+            <asp:Label ID="lblProduto" runat="server" Text="Produto" Width="150"/><asp:TextBox runat="server" ID="txtProduto" ToolTip="Nome do Produto" MaxLength="100"></asp:TextBox><br />
         </p>
         <p>
             <asp:Label ID="lblStatus" runat="server" Text="Status" Width="150"/>
@@ -66,7 +66,15 @@
         </p>
         <p>
             <asp:Label ID="lblDescricao" runat="server" Text="Descrição do Produto" Width="150"/>
-            <asp:TextBox TextMode="MultiLine" runat="server" Width="300px" Height="50px" MaxLength="200"></asp:TextBox>
+            <asp:TextBox ID="txtDescricao" TextMode="MultiLine" runat="server" Width="300px" Height="50px" MaxLength="1000"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Label ID="lblDimensao" runat="server" Text="Dimensão" Width="150px"></asp:Label>
+            <asp:TextBox runat="server" id="txtDimensao" MaxLength="20" ></asp:TextBox>
+        </p>
+        <p>
+            <asp:Label ID="lblPeso" runat="server" Text="Peso" Width="150px"></asp:Label>
+            <asp:TextBox runat="server" id="txtPeso" MaxLength="10" ></asp:TextBox>
         </p>
         <span>Imagens</span>
         <asp:FileUpload ID="fuImagens" runat="server" ToolTip="Adicione uma foto do produto"/>
