@@ -21,6 +21,17 @@ namespace EconoFood.Services.Business
             return new List<Produto>();
         }
 
+        public List<Produto> Listar(int TipoProduto)
+        {
+            var DAL = new ProdutoDAL();
+            var retorno = DAL.Listar(TipoProduto);
+
+            if (retorno != null)
+                return retorno;
+
+            return new List<Produto>();
+        }
+
         public List<Produto> Pesquisar(string nomeProduto)
         {
             var DAL = new ProdutoDAL();

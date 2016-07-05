@@ -141,6 +141,7 @@
     <Content Include="Order\Dispatch.aspx" />
     <Content Include="Order\Maintenance.aspx" />
     <Content Include="Product\ImageHandler.ashx" />
+    <Content Include="EconoFood.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Product\Maintenance.aspx" />
     <Content Include="Product\Precification.aspx" />

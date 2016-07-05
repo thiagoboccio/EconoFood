@@ -17,6 +17,9 @@ namespace EconoFood.Services
         List<DTO.Produto> Listar();
 
         [OperationContract]
+        List<DTO.Produto> ListarPorCategoria(int TipoProduto);
+
+        [OperationContract]
         List<DTO.Produto> PesquisarPorNome(string nomeProduto);
 
         [OperationContract]

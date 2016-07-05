@@ -13,6 +13,12 @@
   <wsdl:message name="IProduto_Listar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarResponse" />
   </wsdl:message>
+  <wsdl:message name="IProduto_ListarPorCategoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCategoria" />
+  </wsdl:message>
+  <wsdl:message name="IProduto_ListarPorCategoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCategoriaResponse" />
+  </wsdl:message>
   <wsdl:message name="IProduto_PesquisarPorNome_InputMessage">
     <wsdl:part name="parameters" element="tns:PesquisarPorNome" />
   </wsdl:message>
@@ -42,6 +48,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/Listar" message="tns:IProduto_Listar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProduto/ListarResponse" message="tns:IProduto_Listar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListarPorCategoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduto/ListarPorCategoria" message="tns:IProduto_ListarPorCategoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduto/ListarPorCategoriaResponse" message="tns:IProduto_ListarPorCategoria_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PesquisarPorNome">
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/PesquisarPorNome" message="tns:IProduto_PesquisarPorNome_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProduto/PesquisarPorNomeResponse" message="tns:IProduto_PesquisarPorNome_OutputMessage" />
@@ -63,6 +73,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Listar">
       <soap:operation soapAction="http://tempuri.org/IProduto/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCategoria">
+      <soap:operation soapAction="http://tempuri.org/IProduto/ListarPorCategoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

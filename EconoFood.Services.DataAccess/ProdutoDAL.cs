@@ -49,7 +49,7 @@ namespace EconoFood.Services.DataAccess
                         conector = new Conector(Procedures.Produto_INSERT);
                         parametros.Add(new SqlParameter { ParameterName = "@IdProduto", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output });
                     }
-                    
+
                     parametros.Add(new SqlParameter { ParameterName = "@Status", SqlDbType = SqlDbType.SmallInt, Value = produto.Status });
                     parametros.Add(new SqlParameter { ParameterName = "@Nome", SqlDbType = SqlDbType.VarChar, Value = produto.Nome });
                     parametros.Add(new SqlParameter { ParameterName = "@TipoProduto", SqlDbType = SqlDbType.Int, Value = produto.TipoProduto });
@@ -60,9 +60,41 @@ namespace EconoFood.Services.DataAccess
 
                     if (IdProduto.Value != null && int.Parse(IdProduto.Value.ToString()) > 0)
                     {
-                        conector = new Conector(Procedures.ProdutoImagem_INSERT);
+                        //Detalhes
+                        parametros = new List<SqlParameter>();
+                        if (produto.Detalhe.IdProdutoDetalhe > 0)
+                        { 
+                            conector = new Conector(Procedures.ProdutoDetalhe_UPDATE);
+                            parametros.Add(new SqlParameter { ParameterName = "@IdProdutoDetalhe", Value = produto.Detalhe.IdProdutoDetalhe, SqlDbType = SqlDbType.Int });
+                        }
+                        else
+                            conector = new Conector(Procedures.ProdutoDetalhe_INSERT);
+                        
+                        
+                        parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto.Value, SqlDbType = SqlDbType.Int });
+                        parametros.Add(new SqlParameter { ParameterName = "@Dimensao", Value = produto.Detalhe.Dimensao, SqlDbType = SqlDbType.VarChar });
+                        parametros.Add(new SqlParameter { ParameterName = "@Peso", Value = produto.Detalhe.Peso, SqlDbType = SqlDbType.VarChar });
+                        parametros.Add(new SqlParameter { ParameterName = "@Descricao", Value = produto.Detalhe.Descricao, SqlDbType = SqlDbType.VarChar });
+
+                        conector.ExecuteNonQuery(parametros);
+
+                        //Imagens - Apaga as imagens da base para gravar as novas
+                        parametros = new List<SqlParameter>();
+                        conector = new Conector(Procedures.ProdutoImagem_DELETE);
+                        parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto.Value, SqlDbType = SqlDbType.Int });
+                        conector.ExecuteNonQuery(parametros);
+                        parametros = new List<SqlParameter>();
+
                         foreach (var imagem in produto.Imagens)
                         {
+                            if (imagem.IdImagem > 0)
+                            { 
+                                conector = new Conector(Procedures.ProdutoImagem_UPDATE);
+                                parametros.Add(new SqlParameter { ParameterName = "@IdImagem", Value = imagem.IdImagem, SqlDbType = SqlDbType.Int });
+                            }
+                            else
+                                conector = new Conector(Procedures.ProdutoImagem_INSERT);
+
                             parametros = new List<SqlParameter>();
                             parametros.Add(new SqlParameter { ParameterName = "@Imagem", Value = imagem.Imagem, SqlDbType = SqlDbType.Image });
                             parametros.Add(new SqlParameter { ParameterName = "@IdProduto", Value = IdProduto.Value, SqlDbType = SqlDbType.Int });
@@ -78,7 +110,7 @@ namespace EconoFood.Services.DataAccess
                 catch (Exception ex)
                 {
                     Transaction.Current.Rollback();
-                    throw;
+                    throw ex;
                 }
             }
             return 0;
@@ -93,15 +125,50 @@ namespace EconoFood.Services.DataAccess
             while (resultado.Read())
             {
                 var produto = new Produto();
+                produto.Imagens = new List<ProdutoImagem>();
+                produto.Imagens.Add(new ProdutoImagem { Imagem = (byte[])resultado["Imagem"] });
                 produto.Detalhe = new ProdutoDetalhe();
                 produto.IdProduto = Convert.ToInt32(resultado["IdProduto"].ToString());
                 produto.Nome = resultado["Nome"].ToString();
                 produto.Status = int.Parse(resultado["Status"].ToString());
+                produto.TipoProduto = int.Parse(resultado["TipoProduto"].ToString());
                 produto.Detalhe.Descricao = resultado["Descricao"].ToString();
                 produto.Detalhe.Dimensao = resultado["Dimensao"].ToString();
                 produto.Detalhe.IdProduto = Convert.ToInt32(resultado["IdProduto"]);
                 produto.Detalhe.IdProdutoDetalhe = Convert.ToInt32(resultado["IdProdutoDetalhe"]);
                 produto.Detalhe.Peso = resultado["Peso"].ToString();
+                produto.Detalhe.ValorVenda = Convert.ToDecimal(resultado["ValorVenda"]);
+                retorno.Add(produto);
+            }
+
+            return retorno;
+        }
+
+        public List<Produto> Listar(int TipoProduto)
+        {
+            Conector conector = new Conector(Procedures.Produto_SELECT_POR_CATEGORIA);
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter { ParameterName = "@TipoProduto", Value = TipoProduto });
+            
+            var resultado = conector.Select(parametros);
+            var retorno = new List<Produto>();
+
+            foreach (DataRow linha in resultado.Rows)
+            {
+                var produto = new Produto();
+                produto.Imagens = new List<ProdutoImagem>();
+                produto.Imagens.Add(new ProdutoImagem { Imagem = (byte[])linha["Imagem"] });
+                produto.Detalhe = new ProdutoDetalhe();
+                produto.IdProduto = Convert.ToInt32(linha["IdProduto"].ToString());
+                produto.Nome = linha["Nome"].ToString();
+                produto.Status = int.Parse(linha["Status"].ToString());
+                produto.TipoProduto = int.Parse(linha["TipoProduto"].ToString());
+                produto.Detalhe.Descricao = linha["Descricao"].ToString();
+                produto.Detalhe.Dimensao = linha["Dimensao"].ToString();
+                produto.Detalhe.IdProduto = Convert.ToInt32(linha["IdProduto"]);
+                produto.Detalhe.IdProdutoDetalhe = Convert.ToInt32(linha["IdProdutoDetalhe"]);
+                produto.Detalhe.Peso = linha["Peso"].ToString();
+                produto.Detalhe.ValorVenda = Convert.ToDecimal(linha["ValorVenda"]);
                 retorno.Add(produto);
             }
 
@@ -121,10 +188,16 @@ namespace EconoFood.Services.DataAccess
             foreach (DataRow linha in resultado.Rows)
             {
                 var produto = new Produto();
+                produto.Detalhe = new ProdutoDetalhe();
                 produto.IdProduto = Convert.ToInt32(linha["IdProduto"].ToString());
                 produto.Nome = linha["Nome"].ToString();
                 produto.Status = int.Parse(linha["Status"].ToString());
                 produto.TipoProduto = int.Parse(linha["TipoProduto"].ToString());
+                produto.Detalhe.Descricao = linha["Descricao"].ToString();
+                produto.Detalhe.Dimensao = linha["Dimensao"].ToString();
+                produto.Detalhe.IdProduto = Convert.ToInt32(linha["IdProduto"]);
+                produto.Detalhe.IdProdutoDetalhe = Convert.ToInt32(linha["IdProdutoDetalhe"]);
+                produto.Detalhe.Peso = linha["Peso"].ToString();
                 retorno.Add(produto);
             }
 

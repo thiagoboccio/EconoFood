@@ -21,6 +21,11 @@ namespace EconoFood.Framework
         /// </summary>
         public static readonly string Produto_SELECT = "Produto_SELECT";
         /// <summary>
+        /// BUSCA PRODUTO POR:
+        /// <paramref name="CATEGORIA"/>        
+        /// </summary>
+        public static readonly string Produto_SELECT_POR_CATEGORIA = "Produto_SELECT_POR_CATEGORIA";
+        /// <summary>
         /// CRIA UM NOVO PRODUTO
         /// </summary>
         public static readonly string Produto_INSERT = "Produto_INSERT";
@@ -28,6 +33,14 @@ namespace EconoFood.Framework
         /// ATUALIZA UM PRODUTO
         /// </summary>
         public static readonly string Produto_UPDATE = "Produto_UPDATE";
+        /// <summary>
+        /// CRIA UM NOVO DETALHE DE PRODUTO
+        /// </summary>
+        public static readonly string ProdutoDetalhe_INSERT = "ProdutoDetalhe_INSERT";
+        /// <summary>
+        /// ATUALIZA UM DETALHE DO PRODUTO
+        /// </summary>
+        public static readonly string ProdutoDetalhe_UPDATE = "ProdutoDetalhe_UPDATE";
         #endregion
 
         #region PRODUTO IMAGEM
@@ -36,9 +49,14 @@ namespace EconoFood.Framework
         /// </summary>
         public static readonly string ProdutoImagem_INSERT = "ProdutoImagem_INSERT";
         /// <summary>
+        /// GRAVA AS IMAGENS DE UM PRODUTO EXISTENTE
+        /// </summary>
+        public static readonly string ProdutoImagem_UPDATE = "ProdutoImagem_UPDATE";
+        /// <summary>
         /// RETORNA AS IMAGENS DE UM PRODUTO
         /// </summary>
         public static readonly string ProdutoImagem_SELECT = "ProdutoImagem_SELECT";
+        public static readonly string ProdutoImagem_DELETE = "ProdutoImagem_DELETE"; 
         #endregion
 
         #region PEDIDO

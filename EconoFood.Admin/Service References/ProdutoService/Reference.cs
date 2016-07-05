@@ -23,6 +23,9 @@ namespace EconoFood.Admin.ProdutoService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EconoFood.Admin.ProdutoService.ProdutoDetalhe DetalheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdProdutoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -44,6 +47,19 @@ namespace EconoFood.Admin.ProdutoService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EconoFood.Admin.ProdutoService.ProdutoDetalhe Detalhe {
+            get {
+                return this.DetalheField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetalheField, value) != true)) {
+                    this.DetalheField = value;
+                    this.RaisePropertyChanged("Detalhe");
+                }
             }
         }
         
@@ -108,6 +124,115 @@ namespace EconoFood.Admin.ProdutoService {
                 if ((this.TipoProdutoField.Equals(value) != true)) {
                     this.TipoProdutoField = value;
                     this.RaisePropertyChanged("TipoProduto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProdutoDetalhe", Namespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO")]
+    [System.SerializableAttribute()]
+    public partial class ProdutoDetalhe : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescricaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProdutoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProdutoDetalheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PesoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descricao {
+            get {
+                return this.DescricaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescricaoField, value) != true)) {
+                    this.DescricaoField = value;
+                    this.RaisePropertyChanged("Descricao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimensao {
+            get {
+                return this.DimensaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensaoField, value) != true)) {
+                    this.DimensaoField = value;
+                    this.RaisePropertyChanged("Dimensao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProduto {
+            get {
+                return this.IdProdutoField;
+            }
+            set {
+                if ((this.IdProdutoField.Equals(value) != true)) {
+                    this.IdProdutoField = value;
+                    this.RaisePropertyChanged("IdProduto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProdutoDetalhe {
+            get {
+                return this.IdProdutoDetalheField;
+            }
+            set {
+                if ((this.IdProdutoDetalheField.Equals(value) != true)) {
+                    this.IdProdutoDetalheField = value;
+                    this.RaisePropertyChanged("IdProdutoDetalhe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Peso {
+            get {
+                return this.PesoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PesoField, value) != true)) {
+                    this.PesoField = value;
+                    this.RaisePropertyChanged("Peso");
                 }
             }
         }

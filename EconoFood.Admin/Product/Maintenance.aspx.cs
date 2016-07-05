@@ -32,7 +32,7 @@ namespace EconoFood.Admin.Product
         {
             get
             {
-                if (IsNumeric(Session["idProdutoDetalhe"].ToString()))
+                if (Session["idProdutoDetalhe"] != null && IsNumeric(Session["idProdutoDetalhe"].ToString()))
                     return int.Parse(Session["idProdutoDetalhe"].ToString());
                 else
                     return 0;

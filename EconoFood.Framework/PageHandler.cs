@@ -13,7 +13,7 @@ namespace EconoFood
         private decimal decimalParser;
         private long longParser;
         private DateTime dateParser;
-
+        
         public List<String> CamposObrigatorios
         {
             get

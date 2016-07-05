@@ -18,6 +18,12 @@ namespace EconoFood.Services
             return bll.Listar();             
         }
 
+        public List<DTO.Produto> ListarPorCategoria(int TipoProduto)
+        {
+            var bll = new Business.ProdutoBLL();
+            return bll.Listar(TipoProduto);
+        }
+
         public List<DTO.Produto> PesquisarPorNome(string nomeProduto)
         {
             var bll = new Business.ProdutoBLL();

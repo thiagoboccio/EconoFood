@@ -23,6 +23,9 @@ namespace EconoFood.ProdutoService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EconoFood.ProdutoService.ProdutoDetalhe DetalheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdProdutoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -34,6 +37,9 @@ namespace EconoFood.ProdutoService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int StatusField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TipoProdutoField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -41,6 +47,19 @@ namespace EconoFood.ProdutoService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EconoFood.ProdutoService.ProdutoDetalhe Detalhe {
+            get {
+                return this.DetalheField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetalheField, value) != true)) {
+                    this.DetalheField = value;
+                    this.RaisePropertyChanged("Detalhe");
+                }
             }
         }
         
@@ -92,6 +111,144 @@ namespace EconoFood.ProdutoService {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TipoProduto {
+            get {
+                return this.TipoProdutoField;
+            }
+            set {
+                if ((this.TipoProdutoField.Equals(value) != true)) {
+                    this.TipoProdutoField = value;
+                    this.RaisePropertyChanged("TipoProduto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProdutoDetalhe", Namespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO")]
+    [System.SerializableAttribute()]
+    public partial class ProdutoDetalhe : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescricaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProdutoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProdutoDetalheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ValorVendaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descricao {
+            get {
+                return this.DescricaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescricaoField, value) != true)) {
+                    this.DescricaoField = value;
+                    this.RaisePropertyChanged("Descricao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimensao {
+            get {
+                return this.DimensaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensaoField, value) != true)) {
+                    this.DimensaoField = value;
+                    this.RaisePropertyChanged("Dimensao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProduto {
+            get {
+                return this.IdProdutoField;
+            }
+            set {
+                if ((this.IdProdutoField.Equals(value) != true)) {
+                    this.IdProdutoField = value;
+                    this.RaisePropertyChanged("IdProduto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProdutoDetalhe {
+            get {
+                return this.IdProdutoDetalheField;
+            }
+            set {
+                if ((this.IdProdutoDetalheField.Equals(value) != true)) {
+                    this.IdProdutoDetalheField = value;
+                    this.RaisePropertyChanged("IdProdutoDetalhe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Peso {
+            get {
+                return this.PesoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PesoField, value) != true)) {
+                    this.PesoField = value;
+                    this.RaisePropertyChanged("Peso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ValorVenda {
+            get {
+                return this.ValorVendaField;
+            }
+            set {
+                if ((this.ValorVendaField.Equals(value) != true)) {
+                    this.ValorVendaField = value;
+                    this.RaisePropertyChanged("ValorVenda");
                 }
             }
         }
@@ -193,6 +350,12 @@ namespace EconoFood.ProdutoService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Listar", ReplyAction="http://tempuri.org/IProduto/ListarResponse")]
         System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarResponse> ListarAsync(EconoFood.ProdutoService.ListarRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/ListarPorCategoria", ReplyAction="http://tempuri.org/IProduto/ListarPorCategoriaResponse")]
+        EconoFood.ProdutoService.ListarPorCategoriaResponse ListarPorCategoria(EconoFood.ProdutoService.ListarPorCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/ListarPorCategoria", ReplyAction="http://tempuri.org/IProduto/ListarPorCategoriaResponse")]
+        System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarPorCategoriaResponse> ListarPorCategoriaAsync(EconoFood.ProdutoService.ListarPorCategoriaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/PesquisarPorNome", ReplyAction="http://tempuri.org/IProduto/PesquisarPorNomeResponse")]
         EconoFood.ProdutoService.PesquisarPorNomeResponse PesquisarPorNome(EconoFood.ProdutoService.PesquisarPorNomeRequest request);
         
@@ -240,6 +403,38 @@ namespace EconoFood.ProdutoService {
         
         public ListarResponse(System.Collections.Generic.List<EconoFood.ProdutoService.Produto> ListarResult) {
             this.ListarResult = ListarResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarPorCategoria", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarPorCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int TipoProduto;
+        
+        public ListarPorCategoriaRequest() {
+        }
+        
+        public ListarPorCategoriaRequest(int TipoProduto) {
+            this.TipoProduto = TipoProduto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarPorCategoriaResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarPorCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.Produto> ListarPorCategoriaResult;
+        
+        public ListarPorCategoriaResponse() {
+        }
+        
+        public ListarPorCategoriaResponse(System.Collections.Generic.List<EconoFood.ProdutoService.Produto> ListarPorCategoriaResult) {
+            this.ListarPorCategoriaResult = ListarPorCategoriaResult;
         }
     }
     
@@ -404,6 +599,14 @@ namespace EconoFood.ProdutoService {
         
         public System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarResponse> ListarAsync(EconoFood.ProdutoService.ListarRequest request) {
             return base.Channel.ListarAsync(request);
+        }
+        
+        public EconoFood.ProdutoService.ListarPorCategoriaResponse ListarPorCategoria(EconoFood.ProdutoService.ListarPorCategoriaRequest request) {
+            return base.Channel.ListarPorCategoria(request);
+        }
+        
+        public System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarPorCategoriaResponse> ListarPorCategoriaAsync(EconoFood.ProdutoService.ListarPorCategoriaRequest request) {
+            return base.Channel.ListarPorCategoriaAsync(request);
         }
         
         public EconoFood.ProdutoService.PesquisarPorNomeResponse PesquisarPorNome(EconoFood.ProdutoService.PesquisarPorNomeRequest request) {

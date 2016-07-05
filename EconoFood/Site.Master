@@ -6,21 +6,17 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>    
+    <title><%: Page.Title %>EconoFood</title>    
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
-<body>    
+<body>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
@@ -33,39 +29,78 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>                
+                <asp:ScriptReference Name="WebFormsBundle" />                
             </Scripts>
         </asp:ScriptManager>
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
+                <div class="cd-search">
+		            <asp:TextBox ID="txtPesquisa" runat="server" ToolTip="Pesquisa de produtos"></asp:TextBox>
+                    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
+	            </div>
+                <%--<div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">EconoFood</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/About">Sobre nós</a></li>
+                        <li><a runat="server" href="~/Contact">Contato</a></li>
                     </ul>
-                </div>
+                </div>--%>
             </div>
         </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+        <div class="navbar">
+            <asp:ListView ID="lvCategorias" runat="server">
+                <ItemTemplate>
+                    <asp:LinkButton ID="lkCategoria" runat="server" Text=<%# DataBinder.Eval(Container.DataItem, "Descricao") %> />
+                </ItemTemplate>
+            </asp:ListView>
         </div>
-
+        <asp:UpdatePanel ID="upCarrinho" runat="server" UpdateMode="Conditional"><ContentTemplate>
+            <div class="container body-content">                
+            <div style="float:right; height:800px;margin-top:120px;">
+                <asp:ListView runat="server" ID="lstCarrinho" OnItemDataBound="lstCarrinho_ItemDataBound" OnItemCommand="lstCarrinho_ItemCommand">
+                    <LayoutTemplate>
+                        <table>
+                            <tr ID="groupPlaceholder" runat="server" />                            
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr>
+                            <td ID="itemPlaceholder" runat="server" />
+                        </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td align="center">
+                            <asp:ImageButton ID="imgProduto" runat="server" Width="64" Height="64" /><br />
+                            <a href="Product/Detail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "IdProduto") %>">
+                                <asp:Label runat="server" ID="lblNome"></asp:Label>
+                            </a><br />
+                            <asp:LinkButton ID="lnkRemover" runat="server" Text="Remover" CommandName="Remove" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "IdProduto") %> />
+                        </td>
+                    </ItemTemplate>
+                    <GroupSeparatorTemplate>
+                        <tr runat="server">
+                            <td colspan="3"><hr /></td>
+                        </tr>
+                    </GroupSeparatorTemplate>
+                </asp:ListView>
+                <asp:Button ID="btnComparar" runat="server" Text="Comparar" CssClass="btn btn-lg" Width="400px"/>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+            <hr />            
+            <footer>
+                <p>&copy; <%# DateTime.Now.Year %>$EconoFood</p>
+            </footer>
+            </div>
+        </ContentTemplate></asp:UpdatePanel>
     </form>
 </body>
 </html>

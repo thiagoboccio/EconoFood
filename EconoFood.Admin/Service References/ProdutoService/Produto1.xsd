@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfProduto" nillable="true" type="tns:ArrayOfProduto" />
   <xs:complexType name="Produto">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Detalhe" nillable="true" type="tns:ProdutoDetalhe" />
       <xs:element minOccurs="0" name="IdProduto" type="xs:int" />
       <xs:element minOccurs="0" name="Imagens" nillable="true" type="tns:ArrayOfProdutoImagem" />
       <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
@@ -16,6 +17,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Produto" nillable="true" type="tns:Produto" />
+  <xs:complexType name="ProdutoDetalhe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimensao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdProduto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProdutoDetalhe" type="xs:int" />
+      <xs:element minOccurs="0" name="Peso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProdutoDetalhe" nillable="true" type="tns:ProdutoDetalhe" />
   <xs:complexType name="ArrayOfProdutoImagem">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ProdutoImagem" nillable="true" type="tns:ProdutoImagem" />
