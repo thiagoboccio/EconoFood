@@ -13,24 +13,6 @@ namespace EconoFood {
     public partial class SiteMaster {
         
         /// <summary>
-        /// txtPesquisa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPesquisa;
-        
-        /// <summary>
-        /// btnPesquisar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
-        
-        /// <summary>
         /// lvCategorias control.
         /// </summary>
         /// <remarks>

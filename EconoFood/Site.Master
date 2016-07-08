@@ -32,12 +32,12 @@
                 <asp:ScriptReference Name="WebFormsBundle" />                
             </Scripts>
         </asp:ScriptManager>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="cd-search">
+        <%-- <div class="navbar navbar-inverse navbar-fixed-top">%>
+            <%-- %><div class="container">--%>
+                <%--<div class="cd-search">
 		            <asp:TextBox ID="txtPesquisa" runat="server" ToolTip="Pesquisa de produtos"></asp:TextBox>
                     <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-	            </div>
+	            </div>--%>
                 <%--<div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -52,12 +52,12 @@
                         <li><a runat="server" href="~/Contact">Contato</a></li>
                     </ul>
                 </div>--%>
-            </div>
-        </div>
+            <%--</div> --%>
+        <%-- </div>--%>
         <div class="navbar">
-            <asp:ListView ID="lvCategorias" runat="server">
+            <asp:ListView ID="lvCategorias" runat="server" OnItemCommand="lvCategorias_ItemCommand">
                 <ItemTemplate>
-                    <asp:LinkButton ID="lkCategoria" runat="server" Text=<%# DataBinder.Eval(Container.DataItem, "Descricao") %> />
+                    <asp:LinkButton ID="lkCategoria" runat="server" CommandName="Categoria" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "Id") %> Text=<%# DataBinder.Eval(Container.DataItem, "Descricao") %> />
                 </ItemTemplate>
             </asp:ListView>
         </div>

@@ -12,20 +12,7 @@ namespace EconoFood.Showroom
     public partial class Showroom : PageHandler
     {
         private List<Produto> carrinhoLocal;
-        private List<Produto> produtosListados
-        {
-            get
-            {
-                if (ViewState["produtosListados"] != null)
-                    return (List<Produto>)ViewState["produtosListados"];
-
-                return new List<Produto>();
-            }
-            set
-            {
-                ViewState["produtosListados"] = value;
-            }
-        }
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,29 +20,16 @@ namespace EconoFood.Showroom
             {
                 CarregarProdutos();
             }
-            else
-            {
-                if (!string.IsNullOrEmpty(Master.Pesquisa))
-                    CarregarProdutosPorTipo();
-            }
         }
 
         private void CarregarProdutos()
         {
             var client = new ProdutoService.ProdutoClient();
-            produtosListados = client.Listar(new ProdutoService.ListarRequest()).ListarResult;
-            lstViewProduto.DataSource = produtosListados;
+            Master.ProdutosListados = client.Listar(new ProdutoService.ListarRequest()).ListarResult;            
+            lstViewProduto.DataSource = Master.ProdutosListados;
             lstViewProduto.DataBind();
         }
-
-        private void CarregarProdutosPorTipo()
-        {
-            var client = new ProdutoService.ProdutoClient();
-            //produtosListados = client.p
-            lstViewProduto.DataSource = produtosListados;
-            lstViewProduto.DataBind();
-        }
-
+        
         protected void lstViewProduto_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
@@ -80,7 +54,7 @@ namespace EconoFood.Showroom
             if (e.CommandName == "Add")
             {
                 carrinhoLocal = Master.Carrinho;
-                carrinhoLocal.Add(produtosListados.Find(o => o.IdProduto == Convert.ToInt32(e.CommandArgument.ToString())));
+                carrinhoLocal.Add(Master.ProdutosListados.Find(o => o.IdProduto == Convert.ToInt32(e.CommandArgument.ToString())));
                 Master.Carrinho = carrinhoLocal;
             }
         }

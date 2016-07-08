@@ -41,6 +41,36 @@ namespace EconoFood
             set { Session["Pesquisa"] = value; }
         }
 
+        public int Categoria
+        {
+            get
+            {
+                if (ViewState["Categoria"] != null)
+                    return (int)ViewState["Categoria"];
+
+                return 0;
+            }
+            set
+            {
+                ViewState["Categoria"] = value;
+            }
+        }
+
+        public List<ProdutoService.Produto> ProdutosListados
+        {
+            get
+            {
+                if (ViewState["produtosListados"] != null)
+                    return (List<ProdutoService.Produto>)ViewState["produtosListados"];
+
+                return new List<ProdutoService.Produto>();
+            }
+            set
+            {
+                ViewState["produtosListados"] = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -102,7 +132,20 @@ namespace EconoFood
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
-            Pesquisa = txtPesquisa.Text.Trim();
+            //Pesquisa = txtPesquisa.Text.Trim();
         }
+
+        protected void lvCategorias_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if(e.CommandName=="Categoria")
+            {
+                Categoria = int.Parse(e.CommandArgument.ToString());
+                ListView lstViewProduto = (ListView)MainContent.FindControl("lstViewProduto");
+                var client = new ProdutoService.ProdutoClient();
+                ProdutosListados = client.ListarPorCategoria(new ProdutoService.ListarPorCategoriaRequest { TipoProduto = Categoria }).ListarPorCategoriaResult;
+                lstViewProduto.DataSource = ProdutosListados;
+                lstViewProduto.DataBind();
+            }
+        }        
     }
 }
