@@ -43,6 +43,12 @@
   <wsdl:message name="IProduto_ListarImagens_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarImagensResponse" />
   </wsdl:message>
+  <wsdl:message name="IProduto_Comparar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Comparar" />
+  </wsdl:message>
+  <wsdl:message name="IProduto_Comparar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompararResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProduto">
     <wsdl:operation name="Listar">
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/Listar" message="tns:IProduto_Listar_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="ListarImagens">
       <wsdl:input wsaw:Action="http://tempuri.org/IProduto/ListarImagens" message="tns:IProduto_ListarImagens_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProduto/ListarImagensResponse" message="tns:IProduto_ListarImagens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Comparar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduto/Comparar" message="tns:IProduto_Comparar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduto/CompararResponse" message="tns:IProduto_Comparar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProduto" type="tns:IProduto">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarImagens">
       <soap:operation soapAction="http://tempuri.org/IProduto/ListarImagens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Comparar">
+      <soap:operation soapAction="http://tempuri.org/IProduto/Comparar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

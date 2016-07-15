@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="36555100-9a13-4286-95d0-0e9ab32e6f26" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e6b46bec-c2cf-4d6e-94fa-aa9e32228454" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -21,13 +21,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:57255/ServiceExtra.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:50158/ServicePaoDeAcucar.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceExtra1.xsd" MetadataType="Schema" ID="10d01d46-07f5-4980-969a-f87317c268a6" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?xsd=xsd1" />
-    <MetadataFile FileName="ServiceExtra2.xsd" MetadataType="Schema" ID="014cc8f2-452b-4f7c-9d37-8e60711f4b13" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?xsd=xsd0" />
-    <MetadataFile FileName="ServiceExtra.disco" MetadataType="Disco" ID="41a4631c-b7ae-4912-93e3-4a8edc59dbc5" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?disco" />
-    <MetadataFile FileName="ServiceExtra.wsdl" MetadataType="Wsdl" ID="7a317be7-3447-40de-a8b5-409c092a7dd2" SourceId="1" SourceUrl="http://localhost:57255/ServiceExtra.svc?wsdl" />
+    <MetadataFile FileName="ServicePaoDeAcucar.disco" MetadataType="Disco" ID="3d81d272-9288-4276-b36d-236be0d59f6a" SourceId="1" SourceUrl="http://localhost:50158/ServicePaoDeAcucar.svc?disco" />
+    <MetadataFile FileName="ServicePaoDeAcucar.wsdl" MetadataType="Wsdl" ID="e6df2a67-432f-4d91-895c-01c576e0296e" SourceId="1" SourceUrl="http://localhost:50158/ServicePaoDeAcucar.svc?wsdl" />
+    <MetadataFile FileName="ServicePaoDeAcucar2.xsd" MetadataType="Schema" ID="c6f03fff-7888-4eba-816b-bb0f1d53a05b" SourceId="1" SourceUrl="http://localhost:50158/ServicePaoDeAcucar.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicePaoDeAcucar3.xsd" MetadataType="Schema" ID="87bef717-0d35-4b3a-87aa-1e409fa4b9e3" SourceId="1" SourceUrl="http://localhost:50158/ServicePaoDeAcucar.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -46,6 +46,12 @@ namespace EconoFood.Services
         {
             var bll = new Business.ProdutoImagemBLL();
             return bll.ListarImagens(idProduto);
-        }        
+        }
+        
+        public List<Comparacao> Comparar(List<DTO.Produto> produtos)
+        {
+            var bll = new Business.ProdutoBLL();
+            return bll.CompararPreco(produtos);
+        }
     }
 }

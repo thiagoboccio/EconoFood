@@ -109,14 +109,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Img\1450846683_Working_Tools_2.png" />
     <Content Include="Content\Img\1450850589_Photographer_2.png" />
     <Content Include="Content\Img\1451865573_Add.png" />
     <Content Include="Content\Img\1451978009_remove-circle-outline.png" />
+    <Content Include="Content\Img\search.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -198,6 +197,9 @@
     <Content Include="Service References\ProdutoService\EconoFood.ProdutoService.ListarPorCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ProdutoService\EconoFood.ProdutoService.CompararResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ProdutoService\Produto.disco" />
     <None Include="Service References\ProdutoService\configuration91.svcinfo" />
     <None Include="Service References\ProdutoService\configuration.svcinfo" />
@@ -205,6 +207,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Showroom\Comparison.aspx" />
     <Content Include="Showroom\Showroom.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
@@ -233,21 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -275,6 +264,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Showroom\Comparison.aspx.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Showroom\Comparison.aspx.designer.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
     </Compile>
     <Compile Include="Showroom\Showroom.aspx.cs">
       <DependentUpon>Showroom.aspx</DependentUpon>

@@ -163,7 +163,7 @@ namespace EconoFood.ProdutoService {
         private string PesoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ValorVendaField;
+        private System.Nullable<decimal> ValorVendaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -241,7 +241,7 @@ namespace EconoFood.ProdutoService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal ValorVenda {
+        public System.Nullable<decimal> ValorVenda {
             get {
                 return this.ValorVendaField;
             }
@@ -340,6 +340,83 @@ namespace EconoFood.ProdutoService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Comparacao", Namespace="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO")]
+    [System.SerializableAttribute()]
+    public partial class Comparacao : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private short PartnerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<EconoFood.ProdutoService.Produto> ProdutosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ScoreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short Partner {
+            get {
+                return this.PartnerField;
+            }
+            set {
+                if ((this.PartnerField.Equals(value) != true)) {
+                    this.PartnerField = value;
+                    this.RaisePropertyChanged("Partner");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.Produto> Produtos {
+            get {
+                return this.ProdutosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProdutosField, value) != true)) {
+                    this.ProdutosField = value;
+                    this.RaisePropertyChanged("Produtos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Score {
+            get {
+                return this.ScoreField;
+            }
+            set {
+                if ((this.ScoreField.Equals(value) != true)) {
+                    this.ScoreField = value;
+                    this.RaisePropertyChanged("Score");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProdutoService.IProduto")]
     public interface IProduto {
@@ -379,6 +456,12 @@ namespace EconoFood.ProdutoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/ListarImagens", ReplyAction="http://tempuri.org/IProduto/ListarImagensResponse")]
         System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarImagensResponse> ListarImagensAsync(EconoFood.ProdutoService.ListarImagensRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Comparar", ReplyAction="http://tempuri.org/IProduto/CompararResponse")]
+        EconoFood.ProdutoService.CompararResponse Comparar(EconoFood.ProdutoService.CompararRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProduto/Comparar", ReplyAction="http://tempuri.org/IProduto/CompararResponse")]
+        System.Threading.Tasks.Task<EconoFood.ProdutoService.CompararResponse> CompararAsync(EconoFood.ProdutoService.CompararRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -566,6 +649,38 @@ namespace EconoFood.ProdutoService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Comparar", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CompararRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.Produto> produtos;
+        
+        public CompararRequest() {
+        }
+        
+        public CompararRequest(System.Collections.Generic.List<EconoFood.ProdutoService.Produto> produtos) {
+            this.produtos = produtos;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CompararResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CompararResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<EconoFood.ProdutoService.Comparacao> CompararResult;
+        
+        public CompararResponse() {
+        }
+        
+        public CompararResponse(System.Collections.Generic.List<EconoFood.ProdutoService.Comparacao> CompararResult) {
+            this.CompararResult = CompararResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IProdutoChannel : EconoFood.ProdutoService.IProduto, System.ServiceModel.IClientChannel {
     }
@@ -639,6 +754,14 @@ namespace EconoFood.ProdutoService {
         
         public System.Threading.Tasks.Task<EconoFood.ProdutoService.ListarImagensResponse> ListarImagensAsync(EconoFood.ProdutoService.ListarImagensRequest request) {
             return base.Channel.ListarImagensAsync(request);
+        }
+        
+        public EconoFood.ProdutoService.CompararResponse Comparar(EconoFood.ProdutoService.CompararRequest request) {
+            return base.Channel.Comparar(request);
+        }
+        
+        public System.Threading.Tasks.Task<EconoFood.ProdutoService.CompararResponse> CompararAsync(EconoFood.ProdutoService.CompararRequest request) {
+            return base.Channel.CompararAsync(request);
         }
     }
 }

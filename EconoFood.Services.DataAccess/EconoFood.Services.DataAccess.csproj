@@ -54,6 +54,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PaoDeAcucarService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SondaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,13 +85,20 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExtraService\ServiceExtra.wsdl" />
-    <None Include="Service References\ExtraService\ServiceExtra.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ExtraService\ServiceExtra1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ExtraService\ServiceExtra2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaoDeAcucarService\EconoFood.Services.DataAccess.PaoDeAcucarService.ObterPrecoProdutoPaoDeAcucarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaoDeAcucarService\ServicePaoDeAcucar.wsdl" />
+    <None Include="Service References\PaoDeAcucarService\ServicePaoDeAcucar2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaoDeAcucarService\ServicePaoDeAcucar3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SondaService\EconoFood.Services.DataAccess.SondaService.ObterPrecoProdutoSondaResponse.datasource">
@@ -96,15 +108,13 @@
     <None Include="Service References\SondaService\ServiceSonda.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SondaService\ServiceSonda1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\SondaService\ServiceSonda2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ExtraService\" />
+    <WCFMetadataStorage Include="Service References\PaoDeAcucarService\" />
     <WCFMetadataStorage Include="Service References\SondaService\" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +143,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ExtraService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaoDeAcucarService\ServicePaoDeAcucar.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaoDeAcucarService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaoDeAcucarService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaoDeAcucarService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

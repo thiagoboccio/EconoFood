@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busca.cs" />
+    <Compile Include="Comparacao.cs" />
     <Compile Include="Dominio.cs" />
     <Compile Include="Enum\ePedido.cs" />
     <Compile Include="Pedido.cs" />

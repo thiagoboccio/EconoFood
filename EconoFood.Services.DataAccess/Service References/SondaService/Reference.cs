@@ -9,86 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace EconoFood.Services.DataAccess.SondaService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProdutoSonda", Namespace="http://schemas.datacontract.org/2004/07/ServicoSondaHipermercados")]
-    [System.SerializableAttribute()]
-    public partial class ProdutoSonda : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdProdutoSondaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NomeProdutoSondaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PrecoProdutoSondaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdProdutoSonda {
-            get {
-                return this.IdProdutoSondaField;
-            }
-            set {
-                if ((this.IdProdutoSondaField.Equals(value) != true)) {
-                    this.IdProdutoSondaField = value;
-                    this.RaisePropertyChanged("IdProdutoSonda");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NomeProdutoSonda {
-            get {
-                return this.NomeProdutoSondaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NomeProdutoSondaField, value) != true)) {
-                    this.NomeProdutoSondaField = value;
-                    this.RaisePropertyChanged("NomeProdutoSonda");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PrecoProdutoSonda {
-            get {
-                return this.PrecoProdutoSondaField;
-            }
-            set {
-                if ((this.PrecoProdutoSondaField.Equals(value) != true)) {
-                    this.PrecoProdutoSondaField = value;
-                    this.RaisePropertyChanged("PrecoProdutoSonda");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SondaService.IServiceSonda")]
@@ -107,13 +28,13 @@ namespace EconoFood.Services.DataAccess.SondaService {
     public partial class ObterPrecoProdutoSondaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string nomeProduto;
+        public int idProduto;
         
         public ObterPrecoProdutoSondaRequest() {
         }
         
-        public ObterPrecoProdutoSondaRequest(string nomeProduto) {
-            this.nomeProduto = nomeProduto;
+        public ObterPrecoProdutoSondaRequest(int idProduto) {
+            this.idProduto = idProduto;
         }
     }
     
@@ -123,12 +44,12 @@ namespace EconoFood.Services.DataAccess.SondaService {
     public partial class ObterPrecoProdutoSondaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<EconoFood.Services.DataAccess.SondaService.ProdutoSonda> ObterPrecoProdutoSondaResult;
+        public System.Nullable<decimal> ObterPrecoProdutoSondaResult;
         
         public ObterPrecoProdutoSondaResponse() {
         }
         
-        public ObterPrecoProdutoSondaResponse(System.Collections.Generic.List<EconoFood.Services.DataAccess.SondaService.ProdutoSonda> ObterPrecoProdutoSondaResult) {
+        public ObterPrecoProdutoSondaResponse(System.Nullable<decimal> ObterPrecoProdutoSondaResult) {
             this.ObterPrecoProdutoSondaResult = ObterPrecoProdutoSondaResult;
         }
     }

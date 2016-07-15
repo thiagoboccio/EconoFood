@@ -83,4 +83,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Comparar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="produtos" nillable="true" type="q7:ArrayOfProduto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompararResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EconoFood.Services.DTO" minOccurs="0" name="CompararResult" nillable="true" type="q8:ArrayOfComparacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

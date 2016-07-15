@@ -13,6 +13,6 @@ namespace EconoFood.Services.DTO
         public string Dimensao      { get; set; }
         public string Peso          { get; set; }
         public string Descricao     { get; set; }
-        public decimal ValorVenda   { get; set; }
+        public decimal? ValorVenda   { get; set; }
     }
 }

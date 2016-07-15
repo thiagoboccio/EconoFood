@@ -3,6 +3,7 @@
     <%@ MasterType
         virtualpath="~/Site.Master" 
     %>
+    <asp:UpdatePanel ID="upViewProdutos" runat="server" UpdateMode="Always"><ContentTemplate>
     <div style="margin-top:100px">
     <asp:ListView ID="lstViewProduto" runat="server" OnItemDataBound="lstViewProduto_ItemDataBound" GroupItemCount="3" GroupPlaceholderID="groupPlaceholder" ItemPlaceholderID="itemPlaceholder" OnItemCommand="lstViewProduto_ItemCommand">
         <LayoutTemplate>
@@ -38,4 +39,5 @@
         </GroupSeparatorTemplate>        
     </asp:ListView>        
     </div>
+        </ContentTemplate></asp:UpdatePanel>
 </asp:Content>

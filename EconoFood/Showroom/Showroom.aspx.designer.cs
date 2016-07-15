@@ -13,6 +13,15 @@ namespace EconoFood.Showroom {
     public partial class Showroom {
         
         /// <summary>
+        /// upViewProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upViewProdutos;
+        
+        /// <summary>
         /// lstViewProduto control.
         /// </summary>
         /// <remarks>

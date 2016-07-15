@@ -29,18 +29,6 @@ namespace EconoFood
             }
         }
 
-        public String Pesquisa
-        {
-            get
-            {
-                if (Session["Pesquisa"] != null)
-                    return Session["Pesquisa"].ToString();
-
-                return string.Empty;
-            }
-            set { Session["Pesquisa"] = value; }
-        }
-
         public int Categoria
         {
             get
@@ -129,23 +117,39 @@ namespace EconoFood
                 Carrinho = carrinhoLocal;
             }
         }
-
-        protected void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            //Pesquisa = txtPesquisa.Text.Trim();
-        }
-
+        
         protected void lvCategorias_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             if(e.CommandName=="Categoria")
             {
                 Categoria = int.Parse(e.CommandArgument.ToString());
-                ListView lstViewProduto = (ListView)MainContent.FindControl("lstViewProduto");
                 var client = new ProdutoService.ProdutoClient();
                 ProdutosListados = client.ListarPorCategoria(new ProdutoService.ListarPorCategoriaRequest { TipoProduto = Categoria }).ListarPorCategoriaResult;
-                lstViewProduto.DataSource = ProdutosListados;
-                lstViewProduto.DataBind();
+
+                CarregarListaProdutos();
             }
-        }        
+        }
+        
+        protected void imgbtnPesquisa_Click(object sender, ImageClickEventArgs e)
+        {
+            if(txtPesquisa.Text.Trim() != string.Empty)
+            {
+                var client = new ProdutoService.ProdutoClient();
+                ProdutosListados = client.PesquisarPorNome(new ProdutoService.PesquisarPorNomeRequest { nomeProduto = txtPesquisa.Text.Trim() }).PesquisarPorNomeResult;
+                CarregarListaProdutos();
+            }
+        }
+
+        private void CarregarListaProdutos()
+        {
+            ListView lstViewProduto = (ListView)MainContent.FindControl("lstViewProduto");
+            lstViewProduto.DataSource = ProdutosListados;
+            lstViewProduto.DataBind();
+        }
+
+        protected void btnComparar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Comparison.aspx");
+        }
     }
 }

@@ -24,7 +24,7 @@
       <xs:element minOccurs="0" name="IdProduto" type="xs:int" />
       <xs:element minOccurs="0" name="IdProdutoDetalhe" type="xs:int" />
       <xs:element minOccurs="0" name="Peso" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ValorVenda" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorVenda" nillable="true" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProdutoDetalhe" nillable="true" type="tns:ProdutoDetalhe" />
@@ -42,4 +42,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProdutoImagem" nillable="true" type="tns:ProdutoImagem" />
+  <xs:complexType name="ArrayOfComparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comparacao" nillable="true" type="tns:Comparacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComparacao" nillable="true" type="tns:ArrayOfComparacao" />
+  <xs:complexType name="Comparacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Partner" type="xs:short" />
+      <xs:element minOccurs="0" name="Produtos" nillable="true" type="tns:ArrayOfProduto" />
+      <xs:element minOccurs="0" name="Score" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comparacao" nillable="true" type="tns:Comparacao" />
 </xs:schema>

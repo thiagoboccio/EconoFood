@@ -25,7 +25,6 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="ServiceSonda.xsd" MetadataType="Schema" ID="bd74c725-bfbc-4a49-95ea-4abd860218ed" SourceId="1" SourceUrl="http://localhost:56197/ServiceSonda.svc?xsd=xsd0" />
-    <MetadataFile FileName="ServiceSonda1.xsd" MetadataType="Schema" ID="26584897-9f6d-44a3-a70d-1da48906fc43" SourceId="1" SourceUrl="http://localhost:56197/ServiceSonda.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceSonda.wsdl" MetadataType="Wsdl" ID="f6c44717-36bf-4f07-8391-e55173df1969" SourceId="1" SourceUrl="http://localhost:56197/ServiceSonda.svc?wsdl" />
     <MetadataFile FileName="ServiceSonda.disco" MetadataType="Disco" ID="d61a40b0-c8ac-4690-961d-200004f2bae4" SourceId="1" SourceUrl="http://localhost:56197/ServiceSonda.svc?disco" />
     <MetadataFile FileName="ServiceSonda2.xsd" MetadataType="Schema" ID="64722a1a-bce7-478f-ad1d-34f4f47bb251" SourceId="1" SourceUrl="http://localhost:56197/ServiceSonda.svc?xsd=xsd1" />

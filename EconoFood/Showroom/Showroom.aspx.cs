@@ -13,7 +13,6 @@ namespace EconoFood.Showroom
     {
         private List<Produto> carrinhoLocal;
         
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -53,9 +52,14 @@ namespace EconoFood.Showroom
         {
             if (e.CommandName == "Add")
             {
+                int idProduto = Convert.ToInt32(e.CommandArgument.ToString());                
                 carrinhoLocal = Master.Carrinho;
-                carrinhoLocal.Add(Master.ProdutosListados.Find(o => o.IdProduto == Convert.ToInt32(e.CommandArgument.ToString())));
-                Master.Carrinho = carrinhoLocal;
+                //Só inclui novos produtos
+                if (carrinhoLocal.Find(o => o.IdProduto == idProduto) == null)
+                { 
+                    carrinhoLocal.Add(Master.ProdutosListados.Find(o => o.IdProduto == idProduto));
+                    Master.Carrinho = carrinhoLocal;
+                }
             }
         }
     }

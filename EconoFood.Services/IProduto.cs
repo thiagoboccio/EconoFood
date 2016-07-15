@@ -30,5 +30,8 @@ namespace EconoFood.Services
 
         [OperationContract]
         List<DTO.ProdutoImagem> ListarImagens(int idProduto);
+
+        [OperationContract]
+        List<DTO.Comparacao> Comparar(List<DTO.Produto> produtos);
     }    
 }

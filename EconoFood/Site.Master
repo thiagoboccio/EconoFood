@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
+<head runat="server"> 
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %>EconoFood</title>    
@@ -12,6 +13,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
 </head>
 <body>
     <form runat="server">
@@ -32,6 +34,8 @@
                 <asp:ScriptReference Name="WebFormsBundle" />                
             </Scripts>
         </asp:ScriptManager>
+        <asp:TextBox ID="txtPesquisa" runat="server" ToolTip="Pesquisa de produtos"></asp:TextBox>
+        <asp:ImageButton ID="imgbtnPesquisa" runat="server" ImageUrl="~/Content/Img/search.png" OnClick="imgbtnPesquisa_Click" />
         <%-- <div class="navbar navbar-inverse navbar-fixed-top">%>
             <%-- %><div class="container">--%>
                 <%--<div class="cd-search">
@@ -54,6 +58,7 @@
                 </div>--%>
             <%--</div> --%>
         <%-- </div>--%>
+        <asp:UpdatePanel ID="upCategoria" runat="server" UpdateMode="Always"><ContentTemplate>
         <div class="navbar">
             <asp:ListView ID="lvCategorias" runat="server" OnItemCommand="lvCategorias_ItemCommand">
                 <ItemTemplate>
@@ -61,7 +66,9 @@
                 </ItemTemplate>
             </asp:ListView>
         </div>
-        <asp:UpdatePanel ID="upCarrinho" runat="server" UpdateMode="Conditional"><ContentTemplate>
+        </ContentTemplate></asp:UpdatePanel>
+        <asp:UpdatePanel ID="upCarrinho" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
             <div class="container body-content">                
             <div style="float:right; height:800px;margin-top:120px;">
                 <asp:ListView runat="server" ID="lstCarrinho" OnItemDataBound="lstCarrinho_ItemDataBound" OnItemCommand="lstCarrinho_ItemCommand">
@@ -90,7 +97,7 @@
                         </tr>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
-                <asp:Button ID="btnComparar" runat="server" Text="Comparar" CssClass="btn btn-lg" Width="400px"/>
+                <asp:Button ID="btnComparar" runat="server" Text="Comparar" CssClass="btn btn-lg" Width="400px" OnClick="btnComparar_Click"/>
             </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 
@@ -100,7 +107,8 @@
                 <p>&copy; <%# DateTime.Now.Year %>$EconoFood</p>
             </footer>
             </div>
-        </ContentTemplate></asp:UpdatePanel>
+        </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
-</body>
+</body>  
 </html>

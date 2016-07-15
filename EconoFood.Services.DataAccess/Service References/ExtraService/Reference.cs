@@ -9,86 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace EconoFood.Services.DataAccess.ExtraService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProdutoExtra", Namespace="http://schemas.datacontract.org/2004/07/ServicoExtraHipermercados")]
-    [System.SerializableAttribute()]
-    public partial class ProdutoExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdProdutoExtraField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NomeProdutoExtraField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PrecoProdutoExtraField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdProdutoExtra {
-            get {
-                return this.IdProdutoExtraField;
-            }
-            set {
-                if ((this.IdProdutoExtraField.Equals(value) != true)) {
-                    this.IdProdutoExtraField = value;
-                    this.RaisePropertyChanged("IdProdutoExtra");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NomeProdutoExtra {
-            get {
-                return this.NomeProdutoExtraField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NomeProdutoExtraField, value) != true)) {
-                    this.NomeProdutoExtraField = value;
-                    this.RaisePropertyChanged("NomeProdutoExtra");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PrecoProdutoExtra {
-            get {
-                return this.PrecoProdutoExtraField;
-            }
-            set {
-                if ((this.PrecoProdutoExtraField.Equals(value) != true)) {
-                    this.PrecoProdutoExtraField = value;
-                    this.RaisePropertyChanged("PrecoProdutoExtra");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IServiceExtra")]
@@ -107,13 +28,13 @@ namespace EconoFood.Services.DataAccess.ExtraService {
     public partial class ObterPrecoProdutoExtraRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string nomeProduto;
+        public int idProduto;
         
         public ObterPrecoProdutoExtraRequest() {
         }
         
-        public ObterPrecoProdutoExtraRequest(string nomeProduto) {
-            this.nomeProduto = nomeProduto;
+        public ObterPrecoProdutoExtraRequest(int idProduto) {
+            this.idProduto = idProduto;
         }
     }
     
@@ -123,12 +44,12 @@ namespace EconoFood.Services.DataAccess.ExtraService {
     public partial class ObterPrecoProdutoExtraResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<EconoFood.Services.DataAccess.ExtraService.ProdutoExtra> ObterPrecoProdutoExtraResult;
+        public System.Nullable<decimal> ObterPrecoProdutoExtraResult;
         
         public ObterPrecoProdutoExtraResponse() {
         }
         
-        public ObterPrecoProdutoExtraResponse(System.Collections.Generic.List<EconoFood.Services.DataAccess.ExtraService.ProdutoExtra> ObterPrecoProdutoExtraResult) {
+        public ObterPrecoProdutoExtraResponse(System.Nullable<decimal> ObterPrecoProdutoExtraResult) {
             this.ObterPrecoProdutoExtraResult = ObterPrecoProdutoExtraResult;
         }
     }
