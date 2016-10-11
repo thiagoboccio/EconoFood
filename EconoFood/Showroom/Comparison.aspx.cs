@@ -18,7 +18,7 @@ namespace EconoFood.Showroom
             gv1.DataBind();
             gv2.DataSource = comparacao.CompararResult[0];
             gv2.DataBind();
-            gv3.DataSource = comparacao.CompararResult[2];
+            gv3.DataSource = comparacao.CompararResult[2]; 
             gv3.DataBind();
         }
     }
