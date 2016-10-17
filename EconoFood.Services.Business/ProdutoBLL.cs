@@ -58,15 +58,25 @@ namespace EconoFood.Services.Business
 
             //Regras de scores para descidir as 3 melhores opções de compra
             //primeira regra - maior disponibilidade de itens para entrega
-            comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).ToList()[0].Score += 1;
-            comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).ToList()[1].Score += 0.5;
-            comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).ToList()[2].Score += 0.25;
+            var primeiraDisponibilidade = comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).OrderBy(o => o.PrecoTotal).ToList()[0];
+            primeiraDisponibilidade.Score += 1;
+
+            var segundaDisponibilidade = comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).OrderBy(o => o.PrecoTotal).ToList()[1];
+            segundaDisponibilidade.Score += 0.5;
+
+            var terceiraDisponibilidade = comparacoes.OrderByDescending(o => o.ProdutosDisponiveis).OrderBy(o => o.PrecoTotal).ToList()[2];
+            terceiraDisponibilidade.Score += 0.25;
 
             //segunda regra - menor preço total
-            comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[0].Score += 1;
-            comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[1].Score += 0.5;
-            comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[2].Score += 0.25;
-                        
+            //var primeiroPreco = comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[0];
+            //primeiroPreco.Score += 1;
+
+            //var segundoPreco = comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[1];
+            //segundoPreco.Score += 0.5;
+
+            //var terceiroPreco = comparacoes.OrderByDescending(o => o.PrecoTotal).ToList()[2];
+            //terceiroPreco.Score += 0.25;
+
             retorno.Add(comparacoes.OrderByDescending(o => o.Score).ToList()[0]);
             retorno.Add(comparacoes.OrderByDescending(o => o.Score).ToList()[1]);
             retorno.Add(comparacoes.OrderByDescending(o => o.Score).ToList()[2]);

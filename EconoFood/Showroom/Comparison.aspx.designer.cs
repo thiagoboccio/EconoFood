@@ -22,6 +22,33 @@ namespace EconoFood.Showroom {
         protected global::System.Web.UI.WebControls.GridView gv1;
         
         /// <summary>
+        /// lblFrete1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFrete1;
+        
+        /// <summary>
+        /// lblTotal1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal1;
+        
+        /// <summary>
+        /// btnComprar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComprar1;
+        
+        /// <summary>
         /// gv2 control.
         /// </summary>
         /// <remarks>
@@ -31,6 +58,33 @@ namespace EconoFood.Showroom {
         protected global::System.Web.UI.WebControls.GridView gv2;
         
         /// <summary>
+        /// lblFrete2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFrete2;
+        
+        /// <summary>
+        /// lblTotal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal2;
+        
+        /// <summary>
+        /// btnComprar2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComprar2;
+        
+        /// <summary>
         /// gv3 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +92,33 @@ namespace EconoFood.Showroom {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv3;
+        
+        /// <summary>
+        /// lblFrete3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFrete3;
+        
+        /// <summary>
+        /// lblTotal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal3;
+        
+        /// <summary>
+        /// btnComprar3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComprar3;
         
         /// <summary>
         /// Master property.

@@ -211,29 +211,56 @@ namespace EconoFood.Services.DataAccess
             List<Comparacao> retorno = new List<Comparacao>();           
                         
             //CRIAR THREAD
-            ExtraService.ServiceExtraClient extraClient = new ExtraService.ServiceExtraClient();
+            //ExtraService.ServiceExtraClient extraClient = new ExtraService.ServiceExtraClient();
             Comparacao comparacaoExtra = new Comparacao();
-            List<Produto> produtosExtra = produtos;
+            List<Produto> produtosExtra = new List<Produto>();
+            List<Produto> produtosSonda = new List<Produto>();
+            List<Produto> produtosPaoDeAcucar = new List<Produto>();
+            foreach (var produto in produtos)
+            {
+                var produtoExtra = new Produto { Nome = produto.Nome, IdProduto = produto.IdProduto };
+                var produtoSonda = new Produto { Nome = produto.Nome, IdProduto = produto.IdProduto };
+                var produtoPaoDeAcucar = new Produto { Nome = produto.Nome, IdProduto = produto.IdProduto };
+
+                produtoExtra.Detalhe = new ProdutoDetalhe { Descricao = produto.Detalhe.Descricao, Dimensao = produto.Detalhe.Dimensao, IdProduto = produto.Detalhe.IdProduto, IdProdutoDetalhe = produto.Detalhe.IdProdutoDetalhe, Peso = produto.Detalhe.Peso, ValorVenda = produto.Detalhe.ValorVenda };
+                produtoSonda.Detalhe = new ProdutoDetalhe { Descricao = produto.Detalhe.Descricao, Dimensao = produto.Detalhe.Dimensao, IdProduto = produto.Detalhe.IdProduto, IdProdutoDetalhe = produto.Detalhe.IdProdutoDetalhe, Peso = produto.Detalhe.Peso, ValorVenda = produto.Detalhe.ValorVenda };
+                produtoPaoDeAcucar.Detalhe = new ProdutoDetalhe { Descricao = produto.Detalhe.Descricao, Dimensao = produto.Detalhe.Dimensao, IdProduto = produto.Detalhe.IdProduto, IdProdutoDetalhe = produto.Detalhe.IdProdutoDetalhe, Peso = produto.Detalhe.Peso, ValorVenda = produto.Detalhe.ValorVenda };
+
+                produtosExtra.Add(produtoExtra);
+                produtosSonda.Add(produtoSonda);
+                produtosPaoDeAcucar.Add(produtoPaoDeAcucar);
+            }
+                        
             foreach (var produto in produtosExtra)
-                produto.Detalhe.ValorVenda = extraClient.ObterPrecoProdutoExtra(new ExtraService.ObterPrecoProdutoExtraRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoExtraResult;
+            {
+                //produto.Detalhe.ValorVenda = extraClient.ObterPrecoProdutoExtra(new ExtraService.ObterPrecoProdutoExtraRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoExtraResult;
+                produto.Detalhe.ValorVenda = 100;
+            }
             comparacaoExtra.Partner = 1;
             comparacaoExtra.Produtos = produtosExtra;
             retorno.Add(comparacaoExtra);
 
-            SondaService.ServiceSondaClient sondaClient = new SondaService.ServiceSondaClient();
+            //SondaService.ServiceSondaClient sondaClient = new SondaService.ServiceSondaClient();
             Comparacao comparacaoSonda = new Comparacao();
-            List<Produto> produtosSonda = produtos;
+            
             foreach (var produto in produtosSonda)
-                produto.Detalhe.ValorVenda = sondaClient.ObterPrecoProdutoSonda(new SondaService.ObterPrecoProdutoSondaRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoSondaResult;
+            {
+                //produto.Detalhe.ValorVenda = sondaClient.ObterPrecoProdutoSonda(new SondaService.ObterPrecoProdutoSondaRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoSondaResult;
+                produto.Detalhe.ValorVenda = 200;
+            }
             comparacaoSonda.Partner = 2;
             comparacaoSonda.Produtos = produtosSonda;
             retorno.Add(comparacaoSonda);
 
-            PaoDeAcucarService.ServicePaoDeAcucarClient paoDeAcucarClient = new PaoDeAcucarService.ServicePaoDeAcucarClient();
+            //PaoDeAcucarService.ServicePaoDeAcucarClient paoDeAcucarClient = new PaoDeAcucarService.ServicePaoDeAcucarClient();
             Comparacao comparacaoPaoDeAcucar = new Comparacao();
-            List<Produto> produtosPaoDeAcucar = produtos;
+            
             foreach (var produto in produtosPaoDeAcucar)
-                produto.Detalhe.ValorVenda = paoDeAcucarClient.ObterPrecoProdutoPaoDeAcucar(new PaoDeAcucarService.ObterPrecoProdutoPaoDeAcucarRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoPaoDeAcucarResult;
+            {
+                //produto.Detalhe.ValorVenda = paoDeAcucarClient.ObterPrecoProdutoPaoDeAcucar(new PaoDeAcucarService.ObterPrecoProdutoPaoDeAcucarRequest { idProduto = produto.IdProduto }).ObterPrecoProdutoPaoDeAcucarResult;
+                produto.Detalhe.ValorVenda = 300;
+            }
+                
             comparacaoPaoDeAcucar.Partner = 3;
             comparacaoPaoDeAcucar.Produtos = produtosPaoDeAcucar;
             retorno.Add(comparacaoPaoDeAcucar);

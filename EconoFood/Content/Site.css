@@ -1,4 +1,6 @@
-﻿sobreposicao{
+﻿.direita { float:right; }
+
+sobreposicao{
     position: absolute;
     z-index: 9999;
     width:500px;
