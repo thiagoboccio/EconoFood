@@ -23,7 +23,7 @@
             Total:<asp:label runat="server" ID="lblTotal1"></asp:label>
             <asp:Button ID="btnComprar1" runat="server" Text="IR À LOJA" />
         </div>
-    </div>
+    </div> 
     <div>
         <asp:GridView ID="gv2" runat="server" AutoGenerateColumns="False">
             <Columns>
