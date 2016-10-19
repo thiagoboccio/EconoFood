@@ -140,6 +140,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Order\Dispatch.aspx" />
     <Content Include="Order\Maintenance.aspx" />
+    <Content Include="Partner\Maintenance.aspx" />
     <Content Include="Product\ImageHandler.ashx" />
     <Content Include="EconoFood.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -358,6 +359,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Order\Maintenance.aspx.designer.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Maintenance.aspx.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Maintenance.aspx.designer.cs">
       <DependentUpon>Maintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product\ImageHandler.ashx.cs">
